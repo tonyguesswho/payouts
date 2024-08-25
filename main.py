@@ -101,6 +101,11 @@ FIRMS = [
         "id": "66cb6fa0ffd1354e499a8b2c",
         "wallet": "0x858fcd36e5a8aBD64b955b1E2a70F3F75A464AFd",
     },
+    {
+        "name": "FXIFY",
+        "id": "66cb83bdedabdad8909e66f5",
+        "wallet": "0x36109F4D6804f391D830939c0C0e43EFc41a7486",
+    },
 ]
 
 # Cache to store processed FirmSummary objects (24 hours TTL)
