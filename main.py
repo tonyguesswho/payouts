@@ -43,22 +43,22 @@ WEBHOOK_UPDATE_INTERVAL = 6 * 60 * 60  # 6 hours in seconds
 FIRMS = [
     {
         "name": "Goat Funded Trader",
-        "logo": "gft_logo_url",
+        "id": "66ca580dffaeae770f1498d8",
         "wallet": "0xD3E70282420E6349bA3146bc299c4943f9782667",
     },
     {
         "name": "Funding pips",
-        "logo": "funding_logo_url",
+        "id": "66cb30fa8c725024fcd80ef2",
         "wallet": "0x1e198Ad0608476EfA952De1cD8e574dB68df5f16",
     },
     {
         "name": "Alpha capital",
-        "logo": "alpha_logo_url",
+        "id": "66cb31048376632dcc6a2a66",
         "wallet": "0xD172B9C227361FCf6151e802e1F09C084964BDCD",
     },
     {
         "name": "Funded Peaks",
-        "logo": "funded_peaks_logo_url",
+        "id": "66cb310d796c0ab0a80632a3",
         "wallet": "0xd0D96d8Ad9c5f92b66A3b0d721c70D31da582C38",
     },
 ]
@@ -84,7 +84,7 @@ class TimeRangeSummary(BaseModel):
 
 class FirmSummary(BaseModel):
     name: str
-    logo: str
+    id: str
     last_24h: TimeRangeSummary
     last_7d: TimeRangeSummary
     last_30d: TimeRangeSummary
@@ -116,7 +116,7 @@ class RateLimiter:
         self.timestamps.append(time.time())
 
 
-rate_limiter = RateLimiter(calls=5, period=1.0)  # 5 calls per second
+rate_limiter = RateLimiter(calls=1, period=4.0)  # 5 calls per second
 
 
 async def get_token_transactions(wallet_address: str) -> List[Dict]:
@@ -213,8 +213,8 @@ def process_transactions(transactions: List[Dict], wallet_address: str) -> FirmS
             for firm in FIRMS
             if firm["wallet"].lower() == wallet_address.lower()
         ),
-        logo=next(
-            firm["logo"]
+        id=next(
+            firm["id"]
             for firm in FIRMS
             if firm["wallet"].lower() == wallet_address.lower()
         ),
