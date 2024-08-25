@@ -106,6 +106,11 @@ FIRMS = [
         "id": "66cb83bdedabdad8909e66f5",
         "wallet": "0x36109F4D6804f391D830939c0C0e43EFc41a7486",
     },
+    {
+        "name": "Funding Traders",
+        "id": "66cba1ffecc3e2807105cd15",
+        "wallet": "0xe497F35cd0b928b686e9fb2e3cD131949D1841Cf",
+    },
 ]
 
 # Cache to store processed FirmSummary objects (24 hours TTL)
