@@ -61,6 +61,46 @@ FIRMS = [
         "id": "66cb310d796c0ab0a80632a3",
         "wallet": "0xd0D96d8Ad9c5f92b66A3b0d721c70D31da582C38",
     },
+    {
+        "name": "MYFUNDEDFX",
+        "id": "66cb6fb78376632dcc9fa7a3",
+        "wallet": "0x5534A2237f866F3089901A7D17f0E50dD7824c8DE",
+    },
+    {
+        "name": "E8 markets",
+        "id": "66cb6fc8d7c63944198a4e21",
+        "wallet": "0xD19e945EEea57475B791C20112Ebb4B628f5B95c",
+    },
+    {
+        "name": "The 5ers",
+        "id": "66cb6ff62a689130fc027367",
+        "wallet": "0x349B0Ed1520eAE1472f57eaC77e390A1eCB0C677",
+    },
+    {
+        "name": "Pip farm",
+        "id": "66cb7008ecc3e28071dc267c",
+        "wallet": "0x442775D9FcbcD269bbdB7677ebd7f7D34dA5569F",
+    },
+    {
+        "name": "My flash funding",
+        "id": "66cb70231238deea1b8e0dd3",
+        "wallet": "0xeCa4DcC2D6B0ab4A496A3bDEC3cA07f95022cBdB",
+    },
+    {
+        "name": "Instant funding",
+        "id": "66cb7033c6fa014536c41546",
+        "wallet": "0xA3f21b162fA5a523e12590f2915cA418587Cf626",
+    },
+    {
+        "name": "Blue guardian",
+        "id": "66cb70555230d82035fff546",
+        "wallet": "0x68035843020B6c0CD94DD29c273FFF13c8e9A914",
+    },
+    {
+        "name": "ascend X",
+        "id": "66cb6fa0ffd1354e499a8b2c",
+        "wallet": "0x858fcd36e5a8aBD64b955b1E2a70F3F75A464AFd",
+    },
 ]
 
 # Cache to store processed FirmSummary objects (24 hours TTL)

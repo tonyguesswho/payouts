@@ -181,3 +181,100 @@
 2024-08-25 14:31:38,991 - main - INFO - Processing transactions for wallet: 0x1e198ad0608476efa952de1cd8e574db68df5f16
 2024-08-25 14:31:39,033 - main - INFO - Processed 9956 transactions for wallet: 0x1e198ad0608476efa952de1cd8e574db68df5f16
 2024-08-25 14:31:39,034 - main - INFO - Returning summaries for 4 firms
+2024-08-25 19:04:59,562 - main - INFO - Starting up the application
+2024-08-25 19:04:59,562 - main - INFO - Starting cache update
+2024-08-25 19:04:59,562 - main - INFO - Fetching transactions for wallet: 0xd3e70282420e6349ba3146bc299c4943f9782667
+2024-08-25 19:05:01,810 - main - INFO - Successfully fetched 1470 transactions for 0xd3e70282420e6349ba3146bc299c4943f9782667
+2024-08-25 19:05:01,810 - main - INFO - Processing transactions for wallet: 0xd3e70282420e6349ba3146bc299c4943f9782667
+2024-08-25 19:05:01,816 - main - INFO - Processed 1352 transactions for wallet: 0xd3e70282420e6349ba3146bc299c4943f9782667
+2024-08-25 19:05:01,816 - main - INFO - Updated cache for wallet: 0xd3e70282420e6349ba3146bc299c4943f9782667
+2024-08-25 19:05:03,563 - main - INFO - Fetching transactions for wallet: 0x1e198ad0608476efa952de1cd8e574db68df5f16
+2024-08-25 19:05:04,637 - main - ERROR - API Error for 0x1e198ad0608476efa952de1cd8e574db68df5f16: {'status': '0', 'message': 'NOTOK', 'result': 'Max rate limit reached, please use API Key for higher rate limit'}
+2024-08-25 19:05:04,640 - main - INFO - Processing transactions for wallet: 0x1e198ad0608476efa952de1cd8e574db68df5f16
+2024-08-25 19:05:04,641 - main - WARNING - No outgoing transactions found for wallet: 0x1e198ad0608476efa952de1cd8e574db68df5f16
+2024-08-25 19:05:04,641 - main - WARNING - No summary generated for wallet: 0x1e198ad0608476efa952de1cd8e574db68df5f16
+2024-08-25 19:05:07,564 - main - INFO - Fetching transactions for wallet: 0xd172b9c227361fcf6151e802e1f09c084964bdcd
+2024-08-25 19:05:14,828 - main - INFO - Successfully fetched 7561 transactions for 0xd172b9c227361fcf6151e802e1f09c084964bdcd
+2024-08-25 19:05:14,829 - main - INFO - Processing transactions for wallet: 0xd172b9c227361fcf6151e802e1f09c084964bdcd
+2024-08-25 19:05:14,852 - main - INFO - Processed 7365 transactions for wallet: 0xd172b9c227361fcf6151e802e1f09c084964bdcd
+2024-08-25 19:05:14,853 - main - INFO - Updated cache for wallet: 0xd172b9c227361fcf6151e802e1f09c084964bdcd
+2024-08-25 19:05:14,853 - main - INFO - Fetching transactions for wallet: 0xd0d96d8ad9c5f92b66a3b0d721c70d31da582c38
+2024-08-25 19:05:19,899 - main - INFO - Successfully fetched 941 transactions for 0xd0d96d8ad9c5f92b66a3b0d721c70d31da582c38
+2024-08-25 19:05:19,906 - main - INFO - Processing transactions for wallet: 0xd0d96d8ad9c5f92b66a3b0d721c70d31da582c38
+2024-08-25 19:05:19,911 - main - INFO - Processed 850 transactions for wallet: 0xd0d96d8ad9c5f92b66a3b0d721c70d31da582c38
+2024-08-25 19:05:19,911 - main - INFO - Updated cache for wallet: 0xd0d96d8ad9c5f92b66a3b0d721c70d31da582c38
+2024-08-25 19:05:19,911 - main - INFO - Fetching transactions for wallet: 0x5534a2237f866f3089901a7d17f0e50dd7824c8de
+2024-08-25 19:05:20,874 - main - ERROR - API Error for 0x5534a2237f866f3089901a7d17f0e50dd7824c8de: {'status': '0', 'message': 'NOTOK', 'result': 'Max rate limit reached, please use API Key for higher rate limit'}
+2024-08-25 19:05:20,875 - main - INFO - Processing transactions for wallet: 0x5534a2237f866f3089901a7d17f0e50dd7824c8de
+2024-08-25 19:05:20,875 - main - WARNING - No outgoing transactions found for wallet: 0x5534a2237f866f3089901a7d17f0e50dd7824c8de
+2024-08-25 19:05:20,875 - main - WARNING - No summary generated for wallet: 0x5534a2237f866f3089901a7d17f0e50dd7824c8de
+2024-08-25 19:05:23,913 - main - INFO - Fetching transactions for wallet: 0xd19e945eeea57475b791c20112ebb4b628f5b95c
+2024-08-25 19:05:27,282 - main - INFO - Successfully fetched 2117 transactions for 0xd19e945eeea57475b791c20112ebb4b628f5b95c
+2024-08-25 19:05:27,283 - main - INFO - Processing transactions for wallet: 0xd19e945eeea57475b791c20112ebb4b628f5b95c
+2024-08-25 19:05:27,294 - main - INFO - Processed 2027 transactions for wallet: 0xd19e945eeea57475b791c20112ebb4b628f5b95c
+2024-08-25 19:05:27,294 - main - INFO - Updated cache for wallet: 0xd19e945eeea57475b791c20112ebb4b628f5b95c
+2024-08-25 19:05:27,914 - main - INFO - Fetching transactions for wallet: 0x349b0ed1520eae1472f57eac77e390a1ecb0c677
+2024-08-25 19:05:29,122 - main - ERROR - API Error for 0x349b0ed1520eae1472f57eac77e390a1ecb0c677: {'status': '0', 'message': 'NOTOK', 'result': 'Max rate limit reached, please use API Key for higher rate limit'}
+2024-08-25 19:05:29,123 - main - INFO - Processing transactions for wallet: 0x349b0ed1520eae1472f57eac77e390a1ecb0c677
+2024-08-25 19:05:29,123 - main - WARNING - No outgoing transactions found for wallet: 0x349b0ed1520eae1472f57eac77e390a1ecb0c677
+2024-08-25 19:05:29,123 - main - WARNING - No summary generated for wallet: 0x349b0ed1520eae1472f57eac77e390a1ecb0c677
+2024-08-25 19:05:31,915 - main - INFO - Fetching transactions for wallet: 0x442775d9fcbcd269bbdb7677ebd7f7d34da5569f
+2024-08-25 19:05:35,807 - main - INFO - Successfully fetched 44 transactions for 0x442775d9fcbcd269bbdb7677ebd7f7d34da5569f
+2024-08-25 19:05:35,807 - main - INFO - Processing transactions for wallet: 0x442775d9fcbcd269bbdb7677ebd7f7d34da5569f
+2024-08-25 19:05:35,807 - main - INFO - Processed 36 transactions for wallet: 0x442775d9fcbcd269bbdb7677ebd7f7d34da5569f
+2024-08-25 19:05:35,807 - main - INFO - Updated cache for wallet: 0x442775d9fcbcd269bbdb7677ebd7f7d34da5569f
+2024-08-25 19:05:35,915 - main - INFO - Fetching transactions for wallet: 0xeca4dcc2d6b0ab4a496a3bdec3ca07f95022cbdb
+2024-08-25 19:05:36,747 - main - ERROR - API Error for 0xeca4dcc2d6b0ab4a496a3bdec3ca07f95022cbdb: {'status': '0', 'message': 'NOTOK', 'result': 'Max rate limit reached, please use API Key for higher rate limit'}
+2024-08-25 19:05:36,748 - main - INFO - Processing transactions for wallet: 0xeca4dcc2d6b0ab4a496a3bdec3ca07f95022cbdb
+2024-08-25 19:05:36,748 - main - WARNING - No outgoing transactions found for wallet: 0xeca4dcc2d6b0ab4a496a3bdec3ca07f95022cbdb
+2024-08-25 19:05:36,748 - main - WARNING - No summary generated for wallet: 0xeca4dcc2d6b0ab4a496a3bdec3ca07f95022cbdb
+2024-08-25 19:05:39,916 - main - INFO - Fetching transactions for wallet: 0xa3f21b162fa5a523e12590f2915ca418587cf626
+2024-08-25 19:05:40,736 - main - ERROR - API Error for 0xa3f21b162fa5a523e12590f2915ca418587cf626: {'status': '0', 'message': 'NOTOK', 'result': 'Max rate limit reached, please use API Key for higher rate limit'}
+2024-08-25 19:05:40,737 - main - INFO - Processing transactions for wallet: 0xa3f21b162fa5a523e12590f2915ca418587cf626
+2024-08-25 19:05:40,737 - main - WARNING - No outgoing transactions found for wallet: 0xa3f21b162fa5a523e12590f2915ca418587cf626
+2024-08-25 19:05:40,737 - main - WARNING - No summary generated for wallet: 0xa3f21b162fa5a523e12590f2915ca418587cf626
+2024-08-25 19:05:43,917 - main - INFO - Fetching transactions for wallet: 0x68035843020b6c0cd94dd29c273fff13c8e9a914
+2024-08-25 19:05:45,738 - main - INFO - Successfully fetched 2260 transactions for 0x68035843020b6c0cd94dd29c273fff13c8e9a914
+2024-08-25 19:05:45,738 - main - INFO - Processing transactions for wallet: 0x68035843020b6c0cd94dd29c273fff13c8e9a914
+2024-08-25 19:05:45,745 - main - INFO - Processed 2159 transactions for wallet: 0x68035843020b6c0cd94dd29c273fff13c8e9a914
+2024-08-25 19:05:45,745 - main - INFO - Updated cache for wallet: 0x68035843020b6c0cd94dd29c273fff13c8e9a914
+2024-08-25 19:05:47,918 - main - INFO - Fetching transactions for wallet: 0x858fcd36e5a8abd64b955b1e2a70f3f75a464afd
+2024-08-25 19:05:48,863 - main - ERROR - API Error for 0x858fcd36e5a8abd64b955b1e2a70f3f75a464afd: {'status': '0', 'message': 'NOTOK', 'result': 'Max rate limit reached, please use API Key for higher rate limit'}
+2024-08-25 19:05:48,864 - main - INFO - Processing transactions for wallet: 0x858fcd36e5a8abd64b955b1e2a70f3f75a464afd
+2024-08-25 19:05:48,864 - main - WARNING - No outgoing transactions found for wallet: 0x858fcd36e5a8abd64b955b1e2a70f3f75a464afd
+2024-08-25 19:05:48,864 - main - WARNING - No summary generated for wallet: 0x858fcd36e5a8abd64b955b1e2a70f3f75a464afd
+2024-08-25 19:05:48,864 - main - INFO - Cache update completed. Next update in 18000 seconds
+2024-08-25 19:06:59,281 - main - INFO - Received request for firms summary
+2024-08-25 19:06:59,281 - main - WARNING - No cached summary for wallet: 0x1e198ad0608476efa952de1cd8e574db68df5f16. Fetching and processing...
+2024-08-25 19:06:59,281 - main - INFO - Fetching transactions for wallet: 0x1e198ad0608476efa952de1cd8e574db68df5f16
+2024-08-25 19:07:03,633 - main - INFO - Successfully fetched 10000 transactions for 0x1e198ad0608476efa952de1cd8e574db68df5f16
+2024-08-25 19:07:03,633 - main - INFO - Processing transactions for wallet: 0x1e198ad0608476efa952de1cd8e574db68df5f16
+2024-08-25 19:07:03,665 - main - INFO - Processed 9956 transactions for wallet: 0x1e198ad0608476efa952de1cd8e574db68df5f16
+2024-08-25 19:07:03,666 - main - WARNING - No cached summary for wallet: 0x5534a2237f866f3089901a7d17f0e50dd7824c8de. Fetching and processing...
+2024-08-25 19:07:03,666 - main - INFO - Fetching transactions for wallet: 0x5534a2237f866f3089901a7d17f0e50dd7824c8de
+2024-08-25 19:07:05,186 - main - ERROR - API Error for 0x5534a2237f866f3089901a7d17f0e50dd7824c8de: {'status': '0', 'message': 'NOTOK', 'result': 'Max rate limit reached, please use API Key for higher rate limit'}
+2024-08-25 19:07:05,193 - main - INFO - Processing transactions for wallet: 0x5534a2237f866f3089901a7d17f0e50dd7824c8de
+2024-08-25 19:07:05,194 - main - WARNING - No outgoing transactions found for wallet: 0x5534a2237f866f3089901a7d17f0e50dd7824c8de
+2024-08-25 19:07:05,194 - main - ERROR - Failed to generate summary for wallet: 0x5534a2237f866f3089901a7d17f0e50dd7824c8de
+2024-08-25 19:07:05,194 - main - WARNING - No cached summary for wallet: 0x349b0ed1520eae1472f57eac77e390a1ecb0c677. Fetching and processing...
+2024-08-25 19:07:07,667 - main - INFO - Fetching transactions for wallet: 0x349b0ed1520eae1472f57eac77e390a1ecb0c677
+2024-08-25 19:07:10,807 - main - INFO - Successfully fetched 2944 transactions for 0x349b0ed1520eae1472f57eac77e390a1ecb0c677
+2024-08-25 19:07:10,808 - main - INFO - Processing transactions for wallet: 0x349b0ed1520eae1472f57eac77e390a1ecb0c677
+2024-08-25 19:07:10,817 - main - INFO - Processed 2873 transactions for wallet: 0x349b0ed1520eae1472f57eac77e390a1ecb0c677
+2024-08-25 19:07:10,817 - main - WARNING - No cached summary for wallet: 0xeca4dcc2d6b0ab4a496a3bdec3ca07f95022cbdb. Fetching and processing...
+2024-08-25 19:07:11,669 - main - INFO - Fetching transactions for wallet: 0xeca4dcc2d6b0ab4a496a3bdec3ca07f95022cbdb
+2024-08-25 19:07:14,202 - main - ERROR - API Error for 0xeca4dcc2d6b0ab4a496a3bdec3ca07f95022cbdb: {'status': '0', 'message': 'NOTOK', 'result': 'Max rate limit reached, please use API Key for higher rate limit'}
+2024-08-25 19:07:14,203 - main - INFO - Processing transactions for wallet: 0xeca4dcc2d6b0ab4a496a3bdec3ca07f95022cbdb
+2024-08-25 19:07:14,203 - main - WARNING - No outgoing transactions found for wallet: 0xeca4dcc2d6b0ab4a496a3bdec3ca07f95022cbdb
+2024-08-25 19:07:14,203 - main - ERROR - Failed to generate summary for wallet: 0xeca4dcc2d6b0ab4a496a3bdec3ca07f95022cbdb
+2024-08-25 19:07:14,203 - main - WARNING - No cached summary for wallet: 0xa3f21b162fa5a523e12590f2915ca418587cf626. Fetching and processing...
+2024-08-25 19:07:15,671 - main - INFO - Fetching transactions for wallet: 0xa3f21b162fa5a523e12590f2915ca418587cf626
+2024-08-25 19:07:17,748 - main - INFO - Successfully fetched 4284 transactions for 0xa3f21b162fa5a523e12590f2915ca418587cf626
+2024-08-25 19:07:17,749 - main - INFO - Processing transactions for wallet: 0xa3f21b162fa5a523e12590f2915ca418587cf626
+2024-08-25 19:07:17,767 - main - INFO - Processed 3997 transactions for wallet: 0xa3f21b162fa5a523e12590f2915ca418587cf626
+2024-08-25 19:07:17,768 - main - WARNING - No cached summary for wallet: 0x858fcd36e5a8abd64b955b1e2a70f3f75a464afd. Fetching and processing...
+2024-08-25 19:07:19,672 - main - INFO - Fetching transactions for wallet: 0x858fcd36e5a8abd64b955b1e2a70f3f75a464afd
+2024-08-25 19:07:23,559 - main - INFO - Successfully fetched 897 transactions for 0x858fcd36e5a8abd64b955b1e2a70f3f75a464afd
+2024-08-25 19:07:23,560 - main - INFO - Processing transactions for wallet: 0x858fcd36e5a8abd64b955b1e2a70f3f75a464afd
+2024-08-25 19:07:23,563 - main - INFO - Processed 840 transactions for wallet: 0x858fcd36e5a8abd64b955b1e2a70f3f75a464afd
+2024-08-25 19:07:23,563 - main - INFO - Returning summaries for 10 firms
