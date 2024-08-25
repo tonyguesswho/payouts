@@ -89,3 +89,39 @@
 2024-08-25 14:11:43,534 - main - INFO - Successfully fetched 7561 transactions for 0xd172b9c227361fcf6151e802e1f09c084964bdcd
 2024-08-25 14:11:49,536 - main - INFO - Fetching transactions for wallet: 0xd0d96d8ad9c5f92b66a3b0d721c70d31da582c38
 2024-08-25 14:11:53,040 - main - INFO - Successfully fetched 941 transactions for 0xd0d96d8ad9c5f92b66a3b0d721c70d31da582c38
+2024-08-25 14:22:32,752 - main - INFO - Starting up the application
+2024-08-25 14:22:32,753 - main - INFO - Starting cache update
+2024-08-25 14:22:32,753 - main - INFO - Fetching transactions for wallet: 0xd3e70282420e6349ba3146bc299c4943f9782667
+2024-08-25 14:22:36,425 - main - INFO - Successfully fetched 1470 transactions for 0xd3e70282420e6349ba3146bc299c4943f9782667
+2024-08-25 14:22:36,425 - main - INFO - Processing transactions for wallet: 0xd3e70282420e6349ba3146bc299c4943f9782667
+2024-08-25 14:22:36,434 - main - INFO - Processed 1352 transactions for wallet: 0xd3e70282420e6349ba3146bc299c4943f9782667
+2024-08-25 14:22:36,434 - main - INFO - Updated cache for wallet: 0xd3e70282420e6349ba3146bc299c4943f9782667
+2024-08-25 14:22:36,434 - main - INFO - Fetching transactions for wallet: 0x1e198ad0608476efa952de1cd8e574db68df5f16
+2024-08-25 14:22:39,190 - main - ERROR - API Error for 0x1e198ad0608476efa952de1cd8e574db68df5f16: {'status': '0', 'message': 'NOTOK', 'result': 'Max rate limit reached, please use API Key for higher rate limit'}
+2024-08-25 14:22:39,194 - main - INFO - Processing transactions for wallet: 0x1e198ad0608476efa952de1cd8e574db68df5f16
+2024-08-25 14:22:39,195 - main - WARNING - No outgoing transactions found for wallet: 0x1e198ad0608476efa952de1cd8e574db68df5f16
+2024-08-25 14:22:39,195 - main - WARNING - No summary generated for wallet: 0x1e198ad0608476efa952de1cd8e574db68df5f16
+2024-08-25 14:22:39,195 - main - INFO - Fetching transactions for wallet: 0xd172b9c227361fcf6151e802e1f09c084964bdcd
+2024-08-25 14:22:50,183 - main - INFO - Successfully fetched 7561 transactions for 0xd172b9c227361fcf6151e802e1f09c084964bdcd
+2024-08-25 14:22:50,184 - main - INFO - Processing transactions for wallet: 0xd172b9c227361fcf6151e802e1f09c084964bdcd
+2024-08-25 14:22:50,207 - main - INFO - Processed 7365 transactions for wallet: 0xd172b9c227361fcf6151e802e1f09c084964bdcd
+2024-08-25 14:22:50,208 - main - INFO - Updated cache for wallet: 0xd172b9c227361fcf6151e802e1f09c084964bdcd
+2024-08-25 14:22:50,208 - main - INFO - Fetching transactions for wallet: 0xd0d96d8ad9c5f92b66a3b0d721c70d31da582c38
+2024-08-25 14:22:56,202 - main - INFO - Successfully fetched 941 transactions for 0xd0d96d8ad9c5f92b66a3b0d721c70d31da582c38
+2024-08-25 14:22:56,205 - main - INFO - Processing transactions for wallet: 0xd0d96d8ad9c5f92b66a3b0d721c70d31da582c38
+2024-08-25 14:22:56,207 - main - INFO - Processed 850 transactions for wallet: 0xd0d96d8ad9c5f92b66a3b0d721c70d31da582c38
+2024-08-25 14:22:56,208 - main - INFO - Updated cache for wallet: 0xd0d96d8ad9c5f92b66a3b0d721c70d31da582c38
+2024-08-25 14:22:56,208 - main - INFO - Cache update completed. Next update in 18000 seconds
+2024-08-25 14:23:05,452 - main - INFO - Received request for firms summary
+2024-08-25 14:23:05,453 - main - WARNING - No cached summary for wallet: 0x1e198ad0608476efa952de1cd8e574db68df5f16. Fetching and processing...
+2024-08-25 14:23:05,453 - main - INFO - Fetching transactions for wallet: 0x1e198ad0608476efa952de1cd8e574db68df5f16
+2024-08-25 14:23:09,915 - main - INFO - Successfully fetched 10000 transactions for 0x1e198ad0608476efa952de1cd8e574db68df5f16
+2024-08-25 14:23:09,915 - main - INFO - Processing transactions for wallet: 0x1e198ad0608476efa952de1cd8e574db68df5f16
+2024-08-25 14:23:09,959 - main - INFO - Processed 9956 transactions for wallet: 0x1e198ad0608476efa952de1cd8e574db68df5f16
+2024-08-25 14:23:09,960 - main - INFO - Returning summaries for 4 firms
+2024-08-25 14:23:24,686 - main - INFO - Received request for firms summary
+2024-08-25 14:23:24,687 - main - INFO - Returning summaries for 4 firms
+2024-08-25 14:23:27,407 - main - INFO - Received request for firms summary
+2024-08-25 14:23:27,408 - main - INFO - Returning summaries for 4 firms
+2024-08-25 14:23:28,608 - main - INFO - Received request for firms summary
+2024-08-25 14:23:28,608 - main - INFO - Returning summaries for 4 firms
