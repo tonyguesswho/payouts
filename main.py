@@ -2,6 +2,7 @@ import asyncio
 import json
 import logging
 import os
+import time
 from datetime import datetime, timedelta
 from statistics import mean
 from typing import Dict, List, Optional
@@ -12,6 +13,14 @@ from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from websockets.exceptions import ConnectionClosedOK
+
+# Set up logging
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    handlers=[logging.FileHandler("app.log"), logging.StreamHandler()],
+)
+logger = logging.getLogger(__name__)
 
 app = FastAPI()
 
@@ -24,75 +33,127 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Set up logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
-
 # Configuration
 CONTRACT_ADDRESS = "0x1B34bCc581d535D33C895fABce3c85F1bF3bdb33"
 ARBISCAN_API_URL = "https://api.arbiscan.io/api"
 API_KEY = os.environ.get("ARBISCAN_API_KEY", "")
-API_UPDATE_INTERVAL = 5 * 60 * 60  # 5 hours in seconds
+API_UPDATE_INTERVAL = 6 * 60 * 60  # 5 hours in seconds
 WEBHOOK_UPDATE_INTERVAL = 6 * 60 * 60  # 6 hours in seconds
 
 FIRMS = [
-    {"name": "GFT", "logo": "gft_logo_url", "wallet": "0xD3E70282420E6349bA3146bc299c4943f9782667"},
-    # Add more firms here...
+    {
+        "name": "Goat Funded Trader",
+        "logo": "gft_logo_url",
+        "wallet": "0xD3E70282420E6349bA3146bc299c4943f9782667",
+    },
+    {
+        "name": "Funding pips",
+        "logo": "funding_logo_url",
+        "wallet": "0x1e198Ad0608476EfA952De1cD8e574dB68df5f16",
+    },
+    {
+        "name": "Alpha capital",
+        "logo": "alpha_logo_url",
+        "wallet": "0xD172B9C227361FCf6151e802e1F09C084964BDCD",
+    },
+    {
+        "name": "Funded Peaks",
+        "logo": "funded_peaks_logo_url",
+        "wallet": "0xd0D96d8Ad9c5f92b66A3b0d721c70D31da582C38",
+    },
 ]
 
 # Cache to store all transactions (24 hours TTL)
-cache = TTLCache(maxsize=100, ttl=24*60*60)
+cache = TTLCache(maxsize=100, ttl=24 * 60 * 60)
+
 
 class Payout(BaseModel):
     value: float
     timestamp: datetime
 
     class Config:
-        json_encoders = {
-            datetime: lambda v: v.isoformat()
-        }
+        json_encoders = {datetime: lambda v: v.isoformat()}
 
-class FirmSummary(BaseModel):
-    name: str
-    logo: str
+
+class TimeRangeSummary(BaseModel):
     total_payouts: float
     num_payouts: int
     largest_single_payout: float
     average_payout_size: float
-    all_payouts: List[Payout]
-    top_10_payouts: List[Payout]
+
+
+class FirmSummary(BaseModel):
+    name: str
+    logo: str
+    last_24h: TimeRangeSummary
+    last_7d: TimeRangeSummary
+    last_30d: TimeRangeSummary
+    all_time: TimeRangeSummary
+    last_10_payouts: List[Payout]
+    top_10_largest_payouts: List[Payout]
     time_since_last_payout: Optional[str]
 
     class Config:
-        json_encoders = {
-            datetime: lambda v: v.isoformat()
-        }
+        json_encoders = {datetime: lambda v: v.isoformat()}
 
-async def get_token_transactions_batch(wallet_addresses: List[str]) -> Dict[str, List[Dict]]:
-    print("Getting transaction from api")
-    addresses = ",".join(wallet_addresses)
+
+class RateLimiter:
+    def __init__(self, calls: int, period: float):
+        self.calls = calls
+        self.period = period
+        self.timestamps = []
+
+    async def wait(self):
+        now = time.time()
+        self.timestamps = [t for t in self.timestamps if now - t < self.period]
+
+        if len(self.timestamps) >= self.calls:
+            sleep_time = self.period - (now - self.timestamps[0])
+            if sleep_time > 0:
+                logger.debug(
+                    f"Rate limit reached. Waiting for {sleep_time:.2f} seconds"
+                )
+                await asyncio.sleep(sleep_time)
+
+        self.timestamps.append(time.time())
+
+
+rate_limiter = RateLimiter(calls=5, period=1.0)  # 5 calls per second
+
+
+async def get_token_transactions(wallet_address: str) -> List[Dict]:
+    await rate_limiter.wait()
+    logger.info(f"Fetching transactions for wallet: {wallet_address}")
     params = {
         "module": "account",
         "action": "tokentx",
         "contractaddress": CONTRACT_ADDRESS,
-        "address": addresses,
+        "address": wallet_address,
         "sort": "desc",
-        "apikey": API_KEY
+        "apikey": API_KEY,
     }
     async with aiohttp.ClientSession() as session:
         async with session.get(ARBISCAN_API_URL, params=params) as response:
             data = await response.json()
             if data["status"] != "1":
-                raise HTTPException(status_code=400, detail=f"API Error: {data['message']}")
+                logger.error(f"API Error for {wallet_address}: {data}")
+                return []
+            logger.info(
+                f"Successfully fetched {len(data['result'])} transactions for {wallet_address}"
+            )
+            return data["result"]
 
-            transactions_by_wallet = {addr.lower(): [] for addr in wallet_addresses}
-            for tx in data["result"]:
-                if tx["from"].lower() in transactions_by_wallet:
-                    transactions_by_wallet[tx["from"].lower()].append(tx)
-                elif tx["to"].lower() in transactions_by_wallet:
-                    transactions_by_wallet[tx["to"].lower()].append(tx)
 
-            return transactions_by_wallet
+async def get_token_transactions_batch(
+    wallet_addresses: List[str],
+) -> Dict[str, List[Dict]]:
+    transactions_by_wallet = {}
+    for wallet in wallet_addresses:
+        transactions = await get_token_transactions(wallet.lower())
+        transactions_by_wallet[wallet.lower()] = transactions
+        await asyncio.sleep(6)  # Wait for 6 seconds before the next request
+    return transactions_by_wallet
+
 
 def calculate_time_since_last_payout(last_payout_timestamp: datetime) -> str:
     time_difference = datetime.now() - last_payout_timestamp
@@ -107,57 +168,109 @@ def calculate_time_since_last_payout(last_payout_timestamp: datetime) -> str:
     else:
         return f"{minutes} minutes"
 
+
+def summarize_transactions(txs: List[Payout]) -> TimeRangeSummary:
+    if not txs:
+        return TimeRangeSummary(
+            total_payouts=0,
+            num_payouts=0,
+            largest_single_payout=0,
+            average_payout_size=0,
+        )
+    total_payouts = sum(tx.value for tx in txs)
+    num_payouts = len(txs)
+    largest_single_payout = max(tx.value for tx in txs)
+    average_payout_size = total_payouts / num_payouts
+    return TimeRangeSummary(
+        total_payouts=total_payouts,
+        num_payouts=num_payouts,
+        largest_single_payout=largest_single_payout,
+        average_payout_size=average_payout_size,
+    )
+
+
 def process_transactions(transactions: List[Dict], wallet_address: str) -> FirmSummary:
+    logger.info(f"Processing transactions for wallet: {wallet_address}")
     outgoing_txs = [
         Payout(
             value=float(tx["value"]) / (10 ** int(tx["tokenDecimal"])),
-            timestamp=datetime.fromtimestamp(int(tx["timeStamp"]))
+            timestamp=datetime.fromtimestamp(int(tx["timeStamp"])),
         )
         for tx in transactions
         if tx["from"].lower() == wallet_address.lower()
     ]
 
     if not outgoing_txs:
+        logger.warning(f"No outgoing transactions found for wallet: {wallet_address}")
         return None
 
-    total_payouts = sum(tx.value for tx in outgoing_txs)
-    num_payouts = len(outgoing_txs)
-    largest_single_payout = max(tx.value for tx in outgoing_txs)
-    average_payout_size = mean(tx.value for tx in outgoing_txs) if outgoing_txs else 0
-    top_10_payouts = sorted(outgoing_txs, key=lambda x: x.value, reverse=True)[:10]
+    # Sort transactions by timestamp, most recent first
+    outgoing_txs.sort(key=lambda x: x.timestamp, reverse=True)
 
-    last_payout_timestamp = max(tx.timestamp for tx in outgoing_txs)
+    # Sort transactions by value, largest first, for top 10 largest payouts
+    top_10_largest = sorted(outgoing_txs, key=lambda x: x.value, reverse=True)[:10]
+
+    now = datetime.now()
+    last_24h = [tx for tx in outgoing_txs if (now - tx.timestamp) <= timedelta(days=1)]
+    last_7d = [tx for tx in outgoing_txs if (now - tx.timestamp) <= timedelta(days=7)]
+    last_30d = [tx for tx in outgoing_txs if (now - tx.timestamp) <= timedelta(days=30)]
+
+    last_payout_timestamp = outgoing_txs[0].timestamp if outgoing_txs else now
     time_since_last_payout = calculate_time_since_last_payout(last_payout_timestamp)
 
-    return FirmSummary(
-        name=next(firm["name"] for firm in FIRMS if firm["wallet"].lower() == wallet_address.lower()),
-        logo=next(firm["logo"] for firm in FIRMS if firm["wallet"].lower() == wallet_address.lower()),
-        total_payouts=total_payouts,
-        num_payouts=num_payouts,
-        largest_single_payout=largest_single_payout,
-        average_payout_size=average_payout_size,
-        all_payouts=outgoing_txs,
-        top_10_payouts=top_10_payouts,
-        time_since_last_payout=time_since_last_payout
+    firm_summary = FirmSummary(
+        name=next(
+            firm["name"]
+            for firm in FIRMS
+            if firm["wallet"].lower() == wallet_address.lower()
+        ),
+        logo=next(
+            firm["logo"]
+            for firm in FIRMS
+            if firm["wallet"].lower() == wallet_address.lower()
+        ),
+        last_24h=summarize_transactions(last_24h),
+        last_7d=summarize_transactions(last_7d),
+        last_30d=summarize_transactions(last_30d),
+        all_time=summarize_transactions(outgoing_txs),
+        last_10_payouts=outgoing_txs[:10],
+        top_10_largest_payouts=top_10_largest,
+        time_since_last_payout=time_since_last_payout,
     )
+    logger.info(
+        f"Processed {len(outgoing_txs)} transactions for wallet: {wallet_address}"
+    )
+    return firm_summary
+
 
 async def update_cache():
     while True:
+        logger.info("Starting cache update")
         wallet_addresses = [firm["wallet"].lower() for firm in FIRMS]
         try:
-            transactions_by_wallet = await get_token_transactions_batch(wallet_addresses)
+            transactions_by_wallet = await get_token_transactions_batch(
+                wallet_addresses
+            )
             for wallet, transactions in transactions_by_wallet.items():
                 cache[wallet] = transactions
+            logger.info(
+                f"Cache updated successfully for {len(wallet_addresses)} wallets"
+            )
         except Exception as e:
             logger.error(f"Error updating cache: {e}")
+        logger.info(f"Next cache update in {API_UPDATE_INTERVAL} seconds")
         await asyncio.sleep(API_UPDATE_INTERVAL)
+
 
 @app.on_event("startup")
 async def startup_event():
+    logger.info("Starting up the application")
     asyncio.create_task(update_cache())
+
 
 @app.get("/firms", response_model=List[FirmSummary])
 async def get_firms_summary():
+    logger.info("Received request for firms summary")
     summaries = []
     wallet_addresses = [firm["wallet"].lower() for firm in FIRMS]
 
@@ -166,7 +279,9 @@ async def get_firms_summary():
         transactions = cache.get(wallet, [])
 
         if not transactions:
-            # If not in cache, fetch for this specific wallet
+            logger.warning(
+                f"No cached transactions for wallet: {wallet}. Fetching from API."
+            )
             transactions_by_wallet = await get_token_transactions_batch([wallet])
             transactions = transactions_by_wallet.get(wallet, [])
             cache[wallet] = transactions
@@ -175,7 +290,9 @@ async def get_firms_summary():
         if summary:
             summaries.append(summary)
 
+    logger.info(f"Returning summaries for {len(summaries)} firms")
     return summaries
+
 
 class CustomJSONEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -187,37 +304,40 @@ class CustomJSONEncoder(json.JSONEncoder):
             return obj.dict()
         return super().default(obj)
 
-@app.websocket("/ws")
-async def websocket_endpoint(websocket: WebSocket):
-    logger.info("WebSocket connection attempt")
-    try:
-        await websocket.accept()
-        logger.info("WebSocket connection accepted")
-        try:
-            while True:
-                summaries = []
-                for firm in FIRMS:
-                    wallet = firm["wallet"].lower()
-                    transactions = cache.get(wallet, [])
-                    summary = process_transactions(transactions, wallet)
-                    if summary:
-                        summaries.append(summary)
 
-                # Use custom JSON encoder to handle datetime serialization
-                json_compatible_summaries = json.dumps(summaries, cls=CustomJSONEncoder)
-                await websocket.send_text(json_compatible_summaries)
+# @app.websocket("/ws")
+# async def websocket_endpoint(websocket: WebSocket):
+#     logger.info("WebSocket connection attempt")
+#     try:
+#         await websocket.accept()
+#         logger.info("WebSocket connection accepted")
+#         try:
+#             while True:
+#                 summaries = []
+#                 for firm in FIRMS:
+#                     wallet = firm["wallet"].lower()
+#                     transactions = cache.get(wallet, [])
+#                     summary = process_transactions(transactions, wallet)
+#                     if summary:
+#                         summaries.append(summary)
 
-                logger.info("Data sent through WebSocket")
-                await asyncio.sleep(WEBHOOK_UPDATE_INTERVAL)
-        except WebSocketDisconnect:
-            logger.info("WebSocket disconnected")
-        except ConnectionClosedOK:
-            logger.info("WebSocket connection closed normally")
-        except Exception as e:
-            logger.error(f"Error in WebSocket communication: {str(e)}")
-    except Exception as e:
-        logger.error(f"Failed to establish WebSocket connection: {str(e)}")
+#                 json_compatible_summaries = json.dumps(summaries, cls=CustomJSONEncoder)
+#                 await websocket.send_text(json_compatible_summaries)
+
+#                 logger.info("Data sent through WebSocket")
+#                 await asyncio.sleep(WEBHOOK_UPDATE_INTERVAL)
+#         except WebSocketDisconnect:
+#             logger.info("WebSocket disconnected")
+#         except ConnectionClosedOK:
+#             logger.info("WebSocket connection closed normally")
+#         except Exception as e:
+#             logger.error(f"Error in WebSocket communication: {str(e)}")
+#     except Exception as e:
+#         logger.error(f"Failed to establish WebSocket connection: {str(e)}")
+
 
 if __name__ == "__main__":
     import uvicorn
+
+    logger.info("Starting the FastAPI application")
     uvicorn.run(app, host="0.0.0.0", port=8000, log_level="info")
