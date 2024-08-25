@@ -64,7 +64,7 @@ FIRMS = [
     {
         "name": "MYFUNDEDFX",
         "id": "66cb6fb78376632dcc9fa7a3",
-        "wallet": "0x5534A2237f866F3089901A7D17f0E50dD7824c8DE",
+        "wallet": "0x5534A2237f866F3089901A7D17f0E50dD7824c8D",
     },
     {
         "name": "E8 markets",
