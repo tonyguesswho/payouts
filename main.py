@@ -111,6 +111,11 @@ FIRMS = [
         "id": "66cba1ffecc3e2807105cd15",
         "wallet": "0xe497F35cd0b928b686e9fb2e3cD131949D1841Cf",
     },
+    {
+        "name": "Funded Next",
+        "id": "66cc776ec15ebbd49e0b8f0c",
+        "wallet": "0x2b9a16e8448091159cc2b2a205b11f2368d53cb6",
+    },
 ]
 
 # Cache to store processed FirmSummary objects (24 hours TTL)
