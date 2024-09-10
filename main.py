@@ -116,6 +116,16 @@ FIRMS = [
         "id": "66cc776ec15ebbd49e0b8f0c",
         "wallet": "0x2b9a16e8448091159cc2b2a205b11f2368d53cb6",
     },
+    {
+        "name": "Artic Funding",
+        "id": "66cf2f4777b50737924ac87e",
+        "wallet": "0xD4b7E42c1E0C0fDb4285d1dcfCe253C221a30b39",
+    },
+    {
+        "name": "TopTierTrader",
+        "id": "66d26a7e7fa8b1bcae4c4bbc",
+        "wallet": "0x2265f428a8803bcc6Ccf4A405E627B0c51f33389",
+    },
 ]
 
 # Cache to store processed FirmSummary objects (24 hours TTL)
