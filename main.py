@@ -153,10 +153,12 @@ class FirmSummary(BaseModel):
     last_24h: TimeRangeSummary
     last_7d: TimeRangeSummary
     last_30d: TimeRangeSummary
+    previous_30d: TimeRangeSummary
     all_time: TimeRangeSummary
     last_10_payouts: List[Payout]
     top_10_largest_payouts: List[Payout]
     time_since_last_payout: Optional[str]
+    percentage_change_from_previous_month: float
 
     class Config:
         json_encoders = {datetime: lambda v: v.isoformat()}
@@ -268,9 +270,25 @@ def process_transactions(transactions: List[Dict], wallet_address: str) -> FirmS
     last_24h = [tx for tx in outgoing_txs if (now - tx.timestamp) <= timedelta(days=1)]
     last_7d = [tx for tx in outgoing_txs if (now - tx.timestamp) <= timedelta(days=7)]
     last_30d = [tx for tx in outgoing_txs if (now - tx.timestamp) <= timedelta(days=30)]
+    previous_30d = [
+        tx
+        for tx in outgoing_txs
+        if timedelta(days=30) < (now - tx.timestamp) <= timedelta(days=60)
+    ]
 
     last_payout_timestamp = outgoing_txs[0].timestamp if outgoing_txs else now
     time_since_last_payout = calculate_time_since_last_payout(last_payout_timestamp)
+
+    last_30d_summary = summarize_transactions(last_30d)
+    previous_30d_summary = summarize_transactions(previous_30d)
+
+    if previous_30d_summary.total_payouts > 0:
+        percentage_change = (
+            (last_30d_summary.total_payouts - previous_30d_summary.total_payouts)
+            / previous_30d_summary.total_payouts
+        ) * 100
+    else:
+        percentage_change = 100 if last_30d_summary.total_payouts > 0 else 0
 
     firm_summary = FirmSummary(
         name=next(
@@ -285,11 +303,13 @@ def process_transactions(transactions: List[Dict], wallet_address: str) -> FirmS
         ),
         last_24h=summarize_transactions(last_24h),
         last_7d=summarize_transactions(last_7d),
-        last_30d=summarize_transactions(last_30d),
+        last_30d=last_30d_summary,
+        previous_30d=previous_30d_summary,
         all_time=summarize_transactions(outgoing_txs),
         last_10_payouts=outgoing_txs[:10],
         top_10_largest_payouts=top_10_largest,
         time_since_last_payout=time_since_last_payout,
+        percentage_change_from_previous_month=percentage_change,
     )
     logger.info(
         "Processed %d transactions for wallet: %s", len(outgoing_txs), wallet_address
