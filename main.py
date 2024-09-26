@@ -126,6 +126,36 @@ FIRMS = [
         "id": "66d26a7e7fa8b1bcae4c4bbc",
         "wallet": "0x2265f428a8803bcc6Ccf4A405E627B0c51f33389",
     },
+    {
+        "name": "My Crypto Funding",
+        "id": "66f530e4e168c74898b83214",
+        "wallet": "0x3657B46874Bd251AeAb273aDF9151dcDd478f5dd",
+    },
+    {
+        "name": "FastTrackTrading",
+        "id": "66f5310482eacef08a74db7d",
+        "wallet": "0x344B5330D8251e66723fd0DAA3eead06f0DfBfF7",
+    },
+    {
+        "name": "My Funded Futures",
+        "id": "66f5311737c03a78ac3bba3b",
+        "wallet": "0x9f28BaC1f793790dd3b0c2f8945F7cA28874f7A6",
+    },
+    {
+        "name": "Elite Trader Funding",
+        "id": "66f531250b9009aedd25e1b1",
+        "wallet": "0x8b028Fb68b277BBb5e6F231594771F010F123ddf",
+    },
+    {
+        "name": "Aqua Funded",
+        "id": "66f5312de2de07e06d55f13f",
+        "wallet": "0x68035843020B6c0CD94DD29c273FFF13c8e9A914",
+    },
+    {
+        "name": "Bespoke Funding",
+        "id": "66f531423b1d1c6145ff3ab4",
+        "wallet": "0xAB87be11b7c9341661786af6026728d6508e2cDe",
+    },
 ]
 
 # Cache to store processed FirmSummary objects (24 hours TTL)
@@ -158,7 +188,7 @@ class FirmSummary(BaseModel):
     last_10_payouts: List[Payout]
     top_10_largest_payouts: List[Payout]
     time_since_last_payout: Optional[str]
-    percentage_change_from_previous_month: float
+    percentage_change_from_previous_month: str
 
     class Config:
         json_encoders = {datetime: lambda v: v.isoformat()}
@@ -287,8 +317,18 @@ def process_transactions(transactions: List[Dict], wallet_address: str) -> FirmS
             (last_30d_summary.total_payouts - previous_30d_summary.total_payouts)
             / previous_30d_summary.total_payouts
         ) * 100
+        percentage_change_str = (
+            f"+{percentage_change:.2f}%"
+            if percentage_change > 0
+            else f"{percentage_change:.2f}%"
+        )
     else:
         percentage_change = 100 if last_30d_summary.total_payouts > 0 else 0
+        percentage_change_str = (
+            f"+{percentage_change:.2f}%"
+            if percentage_change > 0
+            else f"{percentage_change:.2f}%"
+        )
 
     firm_summary = FirmSummary(
         name=next(
@@ -309,7 +349,7 @@ def process_transactions(transactions: List[Dict], wallet_address: str) -> FirmS
         last_10_payouts=outgoing_txs[:10],
         top_10_largest_payouts=top_10_largest,
         time_since_last_payout=time_since_last_payout,
-        percentage_change_from_previous_month=percentage_change,
+        percentage_change_from_previous_month=percentage_change_str,
     )
     logger.info(
         "Processed %d transactions for wallet: %s", len(outgoing_txs), wallet_address
