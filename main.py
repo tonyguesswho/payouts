@@ -129,7 +129,7 @@ FIRMS = [
     {
         "name": "My Crypto Funding",
         "id": "66f530e4e168c74898b83214",
-        "wallet": "0x3657B46874Bd251AeAb273aDF9151dcDd478f5dd",
+        "wallet": "0x3657B46874Bd251AeAb273aDF9151dcDd478f5d",
     },
     {
         "name": "FastTrackTrading",
@@ -150,6 +150,11 @@ FIRMS = [
         "name": "Aqua Funded",
         "id": "66f5312de2de07e06d55f13f",
         "wallet": "0x68035843020B6c0CD94DD29c273FFF13c8e9A914",
+    },
+    {
+        "name": "Monevis",
+        "id": "66f700743428c39fd86601a0",
+        "wallet": "0x7AF51b735Ef5AB57d6a9ebcA163FdE7A0A291c5b",
     },
     {
         "name": "Bespoke Funding",
