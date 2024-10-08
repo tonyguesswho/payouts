@@ -734,3 +734,134 @@
 2024-09-26 11:29:08,158 - main - INFO - Processed 409 transactions for wallet: 0xab87be11b7c9341661786af6026728d6508e2cde
 2024-09-26 11:29:08,158 - main - INFO - Updated cache for wallet: 0xab87be11b7c9341661786af6026728d6508e2cde
 2024-09-26 11:29:08,159 - main - INFO - Cache update completed. Next update in 18000 seconds
+2024-10-08 07:10:39,043 - main - INFO - Starting up the application
+2024-10-08 07:10:39,043 - main - INFO - Starting cache update
+2024-10-08 07:10:39,043 - main - INFO - Fetching transactions for wallet: 0xd3e70282420e6349ba3146bc299c4943f9782667
+2024-10-08 07:10:40,629 - main - INFO - Successfully fetched 1898 transactions for 0xd3e70282420e6349ba3146bc299c4943f9782667
+2024-10-08 07:10:40,630 - main - INFO - Processing transactions for wallet: 0xd3e70282420e6349ba3146bc299c4943f9782667
+2024-10-08 07:10:40,643 - main - INFO - Processed 1754 transactions for wallet: 0xd3e70282420e6349ba3146bc299c4943f9782667
+2024-10-08 07:10:40,644 - main - INFO - Updated cache for wallet: 0xd3e70282420e6349ba3146bc299c4943f9782667
+2024-10-08 07:10:43,047 - main - INFO - Fetching transactions for wallet: 0x1e198ad0608476efa952de1cd8e574db68df5f16
+2024-10-08 07:10:46,569 - main - INFO - Successfully fetched 10000 transactions for 0x1e198ad0608476efa952de1cd8e574db68df5f16
+2024-10-08 07:10:46,571 - main - INFO - Processing transactions for wallet: 0x1e198ad0608476efa952de1cd8e574db68df5f16
+2024-10-08 07:10:46,609 - main - INFO - Processed 9950 transactions for wallet: 0x1e198ad0608476efa952de1cd8e574db68df5f16
+2024-10-08 07:10:46,610 - main - INFO - Updated cache for wallet: 0x1e198ad0608476efa952de1cd8e574db68df5f16
+2024-10-08 07:10:47,049 - main - INFO - Fetching transactions for wallet: 0xd172b9c227361fcf6151e802e1f09c084964bdcd
+2024-10-08 07:10:50,936 - main - INFO - Successfully fetched 9417 transactions for 0xd172b9c227361fcf6151e802e1f09c084964bdcd
+2024-10-08 07:10:50,941 - main - INFO - Processing transactions for wallet: 0xd172b9c227361fcf6151e802e1f09c084964bdcd
+2024-10-08 07:10:50,975 - main - INFO - Processed 9183 transactions for wallet: 0xd172b9c227361fcf6151e802e1f09c084964bdcd
+2024-10-08 07:10:50,975 - main - INFO - Updated cache for wallet: 0xd172b9c227361fcf6151e802e1f09c084964bdcd
+2024-10-08 07:10:51,050 - main - INFO - Fetching transactions for wallet: 0xd0d96d8ad9c5f92b66a3b0d721c70d31da582c38
+2024-10-08 07:10:52,839 - main - INFO - Successfully fetched 941 transactions for 0xd0d96d8ad9c5f92b66a3b0d721c70d31da582c38
+2024-10-08 07:10:52,843 - main - INFO - Processing transactions for wallet: 0xd0d96d8ad9c5f92b66a3b0d721c70d31da582c38
+2024-10-08 07:10:52,848 - main - INFO - Processed 850 transactions for wallet: 0xd0d96d8ad9c5f92b66a3b0d721c70d31da582c38
+2024-10-08 07:10:52,849 - main - INFO - Updated cache for wallet: 0xd0d96d8ad9c5f92b66a3b0d721c70d31da582c38
+2024-10-08 07:10:55,052 - main - INFO - Fetching transactions for wallet: 0x5534a2237f866f3089901a7d17f0e50dd7824c8d
+2024-10-08 07:10:58,022 - main - INFO - Successfully fetched 7169 transactions for 0x5534a2237f866f3089901a7d17f0e50dd7824c8d
+2024-10-08 07:10:58,023 - main - INFO - Processing transactions for wallet: 0x5534a2237f866f3089901a7d17f0e50dd7824c8d
+2024-10-08 07:10:58,054 - main - INFO - Processed 7006 transactions for wallet: 0x5534a2237f866f3089901a7d17f0e50dd7824c8d
+2024-10-08 07:10:58,054 - main - INFO - Updated cache for wallet: 0x5534a2237f866f3089901a7d17f0e50dd7824c8d
+2024-10-08 07:10:59,053 - main - INFO - Fetching transactions for wallet: 0xd19e945eeea57475b791c20112ebb4b628f5b95c
+2024-10-08 07:11:00,835 - main - INFO - Successfully fetched 2837 transactions for 0xd19e945eeea57475b791c20112ebb4b628f5b95c
+2024-10-08 07:11:00,838 - main - INFO - Processing transactions for wallet: 0xd19e945eeea57475b791c20112ebb4b628f5b95c
+2024-10-08 07:11:00,848 - main - INFO - Processed 2721 transactions for wallet: 0xd19e945eeea57475b791c20112ebb4b628f5b95c
+2024-10-08 07:11:00,848 - main - INFO - Updated cache for wallet: 0xd19e945eeea57475b791c20112ebb4b628f5b95c
+2024-10-08 07:11:03,055 - main - INFO - Fetching transactions for wallet: 0x349b0ed1520eae1472f57eac77e390a1ecb0c677
+2024-10-08 07:11:05,139 - main - INFO - Successfully fetched 4212 transactions for 0x349b0ed1520eae1472f57eac77e390a1ecb0c677
+2024-10-08 07:11:05,141 - main - INFO - Processing transactions for wallet: 0x349b0ed1520eae1472f57eac77e390a1ecb0c677
+2024-10-08 07:11:05,155 - main - INFO - Processed 4121 transactions for wallet: 0x349b0ed1520eae1472f57eac77e390a1ecb0c677
+2024-10-08 07:11:05,155 - main - INFO - Updated cache for wallet: 0x349b0ed1520eae1472f57eac77e390a1ecb0c677
+2024-10-08 07:11:07,056 - main - INFO - Fetching transactions for wallet: 0x442775d9fcbcd269bbdb7677ebd7f7d34da5569f
+2024-10-08 07:11:08,005 - main - INFO - Successfully fetched 108 transactions for 0x442775d9fcbcd269bbdb7677ebd7f7d34da5569f
+2024-10-08 07:11:08,007 - main - INFO - Processing transactions for wallet: 0x442775d9fcbcd269bbdb7677ebd7f7d34da5569f
+2024-10-08 07:11:08,007 - main - INFO - Processed 80 transactions for wallet: 0x442775d9fcbcd269bbdb7677ebd7f7d34da5569f
+2024-10-08 07:11:08,007 - main - INFO - Updated cache for wallet: 0x442775d9fcbcd269bbdb7677ebd7f7d34da5569f
+2024-10-08 07:11:11,058 - main - INFO - Fetching transactions for wallet: 0xeca4dcc2d6b0ab4a496a3bdec3ca07f95022cbdb
+2024-10-08 07:11:12,427 - main - INFO - Successfully fetched 570 transactions for 0xeca4dcc2d6b0ab4a496a3bdec3ca07f95022cbdb
+2024-10-08 07:11:12,428 - main - INFO - Processing transactions for wallet: 0xeca4dcc2d6b0ab4a496a3bdec3ca07f95022cbdb
+2024-10-08 07:11:12,430 - main - INFO - Processed 510 transactions for wallet: 0xeca4dcc2d6b0ab4a496a3bdec3ca07f95022cbdb
+2024-10-08 07:11:12,431 - main - INFO - Updated cache for wallet: 0xeca4dcc2d6b0ab4a496a3bdec3ca07f95022cbdb
+2024-10-08 07:11:15,060 - main - INFO - Fetching transactions for wallet: 0xa3f21b162fa5a523e12590f2915ca418587cf626
+2024-10-08 07:11:17,573 - main - INFO - Successfully fetched 4978 transactions for 0xa3f21b162fa5a523e12590f2915ca418587cf626
+2024-10-08 07:11:17,573 - main - INFO - Processing transactions for wallet: 0xa3f21b162fa5a523e12590f2915ca418587cf626
+2024-10-08 07:11:17,598 - main - INFO - Processed 4624 transactions for wallet: 0xa3f21b162fa5a523e12590f2915ca418587cf626
+2024-10-08 07:11:17,598 - main - INFO - Updated cache for wallet: 0xa3f21b162fa5a523e12590f2915ca418587cf626
+2024-10-08 07:11:19,060 - main - INFO - Fetching transactions for wallet: 0x68035843020b6c0cd94dd29c273fff13c8e9a914
+2024-10-08 07:11:21,076 - main - INFO - Successfully fetched 2593 transactions for 0x68035843020b6c0cd94dd29c273fff13c8e9a914
+2024-10-08 07:11:21,078 - main - INFO - Processing transactions for wallet: 0x68035843020b6c0cd94dd29c273fff13c8e9a914
+2024-10-08 07:11:21,090 - main - INFO - Processed 2468 transactions for wallet: 0x68035843020b6c0cd94dd29c273fff13c8e9a914
+2024-10-08 07:11:21,091 - main - INFO - Updated cache for wallet: 0x68035843020b6c0cd94dd29c273fff13c8e9a914
+2024-10-08 07:11:23,062 - main - INFO - Fetching transactions for wallet: 0x858fcd36e5a8abd64b955b1e2a70f3f75a464afd
+2024-10-08 07:11:24,504 - main - INFO - Successfully fetched 957 transactions for 0x858fcd36e5a8abd64b955b1e2a70f3f75a464afd
+2024-10-08 07:11:24,505 - main - INFO - Processing transactions for wallet: 0x858fcd36e5a8abd64b955b1e2a70f3f75a464afd
+2024-10-08 07:11:24,510 - main - INFO - Processed 895 transactions for wallet: 0x858fcd36e5a8abd64b955b1e2a70f3f75a464afd
+2024-10-08 07:11:24,511 - main - INFO - Updated cache for wallet: 0x858fcd36e5a8abd64b955b1e2a70f3f75a464afd
+2024-10-08 07:11:27,063 - main - INFO - Fetching transactions for wallet: 0x36109f4d6804f391d830939c0c0e43efc41a7486
+2024-10-08 07:11:29,734 - main - INFO - Successfully fetched 6650 transactions for 0x36109f4d6804f391d830939c0c0e43efc41a7486
+2024-10-08 07:11:29,735 - main - INFO - Processing transactions for wallet: 0x36109f4d6804f391d830939c0c0e43efc41a7486
+2024-10-08 07:11:29,760 - main - INFO - Processed 6436 transactions for wallet: 0x36109f4d6804f391d830939c0c0e43efc41a7486
+2024-10-08 07:11:29,761 - main - INFO - Updated cache for wallet: 0x36109f4d6804f391d830939c0c0e43efc41a7486
+2024-10-08 07:11:31,064 - main - INFO - Fetching transactions for wallet: 0xe497f35cd0b928b686e9fb2e3cd131949d1841cf
+2024-10-08 07:11:32,649 - main - INFO - Successfully fetched 658 transactions for 0xe497f35cd0b928b686e9fb2e3cd131949d1841cf
+2024-10-08 07:11:32,652 - main - INFO - Processing transactions for wallet: 0xe497f35cd0b928b686e9fb2e3cd131949d1841cf
+2024-10-08 07:11:32,654 - main - INFO - Processed 511 transactions for wallet: 0xe497f35cd0b928b686e9fb2e3cd131949d1841cf
+2024-10-08 07:11:32,654 - main - INFO - Updated cache for wallet: 0xe497f35cd0b928b686e9fb2e3cd131949d1841cf
+2024-10-08 07:11:35,065 - main - INFO - Fetching transactions for wallet: 0x2b9a16e8448091159cc2b2a205b11f2368d53cb6
+2024-10-08 07:11:37,078 - main - INFO - Successfully fetched 5079 transactions for 0x2b9a16e8448091159cc2b2a205b11f2368d53cb6
+2024-10-08 07:11:37,078 - main - INFO - Processing transactions for wallet: 0x2b9a16e8448091159cc2b2a205b11f2368d53cb6
+2024-10-08 07:11:37,100 - main - INFO - Processed 5010 transactions for wallet: 0x2b9a16e8448091159cc2b2a205b11f2368d53cb6
+2024-10-08 07:11:37,100 - main - INFO - Updated cache for wallet: 0x2b9a16e8448091159cc2b2a205b11f2368d53cb6
+2024-10-08 07:11:39,067 - main - INFO - Fetching transactions for wallet: 0xd4b7e42c1e0c0fdb4285d1dcfce253c221a30b39
+2024-10-08 07:11:39,771 - main - INFO - Successfully fetched 112 transactions for 0xd4b7e42c1e0c0fdb4285d1dcfce253c221a30b39
+2024-10-08 07:11:39,773 - main - INFO - Processing transactions for wallet: 0xd4b7e42c1e0c0fdb4285d1dcfce253c221a30b39
+2024-10-08 07:11:39,773 - main - INFO - Processed 96 transactions for wallet: 0xd4b7e42c1e0c0fdb4285d1dcfce253c221a30b39
+2024-10-08 07:11:39,774 - main - INFO - Updated cache for wallet: 0xd4b7e42c1e0c0fdb4285d1dcfce253c221a30b39
+2024-10-08 07:11:43,068 - main - INFO - Fetching transactions for wallet: 0x2265f428a8803bcc6ccf4a405e627b0c51f33389
+2024-10-08 07:11:44,176 - main - INFO - Successfully fetched 311 transactions for 0x2265f428a8803bcc6ccf4a405e627b0c51f33389
+2024-10-08 07:11:44,177 - main - INFO - Processing transactions for wallet: 0x2265f428a8803bcc6ccf4a405e627b0c51f33389
+2024-10-08 07:11:44,181 - main - INFO - Processed 287 transactions for wallet: 0x2265f428a8803bcc6ccf4a405e627b0c51f33389
+2024-10-08 07:11:44,181 - main - INFO - Updated cache for wallet: 0x2265f428a8803bcc6ccf4a405e627b0c51f33389
+2024-10-08 07:11:47,069 - main - INFO - Fetching transactions for wallet: 0x3657b46874bd251aeab273adf9151dcdd478f5d
+2024-10-08 07:11:47,862 - main - ERROR - API Error for 0x3657b46874bd251aeab273adf9151dcdd478f5d: {'status': '0', 'message': 'No transactions found', 'result': []}
+2024-10-08 07:11:47,863 - main - INFO - Processing transactions for wallet: 0x3657b46874bd251aeab273adf9151dcdd478f5d
+2024-10-08 07:11:47,863 - main - WARNING - No outgoing transactions found for wallet: 0x3657b46874bd251aeab273adf9151dcdd478f5d
+2024-10-08 07:11:47,863 - main - WARNING - No summary generated for wallet: 0x3657b46874bd251aeab273adf9151dcdd478f5d
+2024-10-08 07:11:51,070 - main - INFO - Fetching transactions for wallet: 0x344b5330d8251e66723fd0daa3eead06f0dfbff7
+2024-10-08 07:11:52,626 - main - INFO - Successfully fetched 1780 transactions for 0x344b5330d8251e66723fd0daa3eead06f0dfbff7
+2024-10-08 07:11:52,626 - main - INFO - Processing transactions for wallet: 0x344b5330d8251e66723fd0daa3eead06f0dfbff7
+2024-10-08 07:11:52,632 - main - INFO - Processed 1737 transactions for wallet: 0x344b5330d8251e66723fd0daa3eead06f0dfbff7
+2024-10-08 07:11:52,632 - main - INFO - Updated cache for wallet: 0x344b5330d8251e66723fd0daa3eead06f0dfbff7
+2024-10-08 07:11:55,071 - main - INFO - Fetching transactions for wallet: 0x9f28bac1f793790dd3b0c2f8945f7ca28874f7a6
+2024-10-08 07:12:01,813 - main - INFO - Successfully fetched 10000 transactions for 0x9f28bac1f793790dd3b0c2f8945f7ca28874f7a6
+2024-10-08 07:12:01,814 - main - INFO - Processing transactions for wallet: 0x9f28bac1f793790dd3b0c2f8945f7ca28874f7a6
+2024-10-08 07:12:01,861 - main - INFO - Processed 9926 transactions for wallet: 0x9f28bac1f793790dd3b0c2f8945f7ca28874f7a6
+2024-10-08 07:12:01,862 - main - INFO - Updated cache for wallet: 0x9f28bac1f793790dd3b0c2f8945f7ca28874f7a6
+2024-10-08 07:12:01,862 - main - INFO - Fetching transactions for wallet: 0x8b028fb68b277bbb5e6f231594771f010f123ddf
+2024-10-08 07:12:03,386 - main - INFO - Successfully fetched 1130 transactions for 0x8b028fb68b277bbb5e6f231594771f010f123ddf
+2024-10-08 07:12:03,390 - main - INFO - Processing transactions for wallet: 0x8b028fb68b277bbb5e6f231594771f010f123ddf
+2024-10-08 07:12:03,396 - main - INFO - Processed 1056 transactions for wallet: 0x8b028fb68b277bbb5e6f231594771f010f123ddf
+2024-10-08 07:12:03,397 - main - INFO - Updated cache for wallet: 0x8b028fb68b277bbb5e6f231594771f010f123ddf
+2024-10-08 07:12:05,863 - main - INFO - Fetching transactions for wallet: 0x6f405a66cb4048fb05e72d74fcccd5073697c469
+2024-10-08 07:12:06,998 - main - INFO - Successfully fetched 684 transactions for 0x6f405a66cb4048fb05e72d74fcccd5073697c469
+2024-10-08 07:12:06,998 - main - INFO - Processing transactions for wallet: 0x6f405a66cb4048fb05e72d74fcccd5073697c469
+2024-10-08 07:12:07,001 - main - INFO - Processed 593 transactions for wallet: 0x6f405a66cb4048fb05e72d74fcccd5073697c469
+2024-10-08 07:12:07,001 - main - INFO - Updated cache for wallet: 0x6f405a66cb4048fb05e72d74fcccd5073697c469
+2024-10-08 07:12:09,864 - main - INFO - Fetching transactions for wallet: 0x7af51b735ef5ab57d6a9ebca163fde7a0a291c5b
+2024-10-08 07:12:10,877 - main - INFO - Successfully fetched 175 transactions for 0x7af51b735ef5ab57d6a9ebca163fde7a0a291c5b
+2024-10-08 07:12:10,877 - main - INFO - Processing transactions for wallet: 0x7af51b735ef5ab57d6a9ebca163fde7a0a291c5b
+2024-10-08 07:12:10,878 - main - INFO - Processed 93 transactions for wallet: 0x7af51b735ef5ab57d6a9ebca163fde7a0a291c5b
+2024-10-08 07:12:10,878 - main - INFO - Updated cache for wallet: 0x7af51b735ef5ab57d6a9ebca163fde7a0a291c5b
+2024-10-08 07:12:13,865 - main - INFO - Fetching transactions for wallet: 0xab87be11b7c9341661786af6026728d6508e2cde
+2024-10-08 07:12:15,188 - main - INFO - Successfully fetched 533 transactions for 0xab87be11b7c9341661786af6026728d6508e2cde
+2024-10-08 07:12:15,190 - main - INFO - Processing transactions for wallet: 0xab87be11b7c9341661786af6026728d6508e2cde
+2024-10-08 07:12:15,194 - main - INFO - Processed 449 transactions for wallet: 0xab87be11b7c9341661786af6026728d6508e2cde
+2024-10-08 07:12:15,194 - main - INFO - Updated cache for wallet: 0xab87be11b7c9341661786af6026728d6508e2cde
+2024-10-08 07:12:15,194 - main - INFO - Cache update completed. Next update in 18000 seconds
+2024-10-08 07:15:48,917 - main - INFO - Received request for firms summary
+2024-10-08 07:15:48,919 - main - WARNING - No cached summary for wallet: 0x3657b46874bd251aeab273adf9151dcdd478f5d. Fetching and processing...
+2024-10-08 07:15:48,919 - main - INFO - Fetching transactions for wallet: 0x3657b46874bd251aeab273adf9151dcdd478f5d
+2024-10-08 07:15:49,629 - main - ERROR - API Error for 0x3657b46874bd251aeab273adf9151dcdd478f5d: {'status': '0', 'message': 'No transactions found', 'result': []}
+2024-10-08 07:15:49,629 - main - INFO - Processing transactions for wallet: 0x3657b46874bd251aeab273adf9151dcdd478f5d
+2024-10-08 07:15:49,629 - main - WARNING - No outgoing transactions found for wallet: 0x3657b46874bd251aeab273adf9151dcdd478f5d
+2024-10-08 07:15:49,629 - main - ERROR - Failed to generate summary for wallet: 0x3657b46874bd251aeab273adf9151dcdd478f5d
+2024-10-08 07:15:49,629 - main - INFO - Returning summaries for 23 firms

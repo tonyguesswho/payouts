@@ -149,7 +149,7 @@ FIRMS = [
     {
         "name": "Aqua Funded",
         "id": "66f5312de2de07e06d55f13f",
-        "wallet": "0x68035843020B6c0CD94DD29c273FFF13c8e9A914",
+        "wallet": "0x6F405a66cb4048fb05E72D74FCCcD5073697c469",
     },
     {
         "name": "Monevis",
