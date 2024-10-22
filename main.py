@@ -129,7 +129,7 @@ FIRMS = [
     {
         "name": "My Crypto Funding",
         "id": "66f530e4e168c74898b83214",
-        "wallet": "0x3657B46874Bd251AeAb273aDF9151dcDd478f5d",
+        "wallet": "0x390A8b588fAf26742f6C5433E29449B35bD35302",
     },
     {
         "name": "FastTrackTrading",
