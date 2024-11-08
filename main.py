@@ -131,11 +131,11 @@ FIRMS = [
         "id": "66f530e4e168c74898b83214",
         "wallet": "0x390A8b588fAf26742f6C5433E29449B35bD35302",
     },
-    {
-        "name": "FastTrackTrading",
-        "id": "66f5310482eacef08a74db7d",
-        "wallet": "0x344B5330D8251e66723fd0DAA3eead06f0DfBfF7",
-    },
+    # {
+    #     "name": "FastTrackTrading",
+    #     "id": "66f5310482eacef08a74db7d",
+    #     "wallet": "0x344B5330D8251e66723fd0DAA3eead06f0DfBfF7",
+    # },
     {
         "name": "My Funded Futures",
         "id": "66f5311737c03a78ac3bba3b",
