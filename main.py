@@ -44,92 +44,96 @@ FIRMS = [
     {
         "name": "Goat Funded Trader",
         "id": "66ca580dffaeae770f1498d8",
-        "wallet": "0xD3E70282420E6349bA3146bc299c4943f9782667",
+        "wallets": [
+            "0xD3E70282420E6349bA3146bc299c4943f9782667",
+            "0x0DB777559702d28509DAc1D7A8A473A0F53d96d6",
+            "0xe897C6648A4160f34369173A8403B551Bdc96ffb",
+        ],
     },
     {
         "name": "Funding pips",
         "id": "66cb30fa8c725024fcd80ef2",
-        "wallet": "0x1e198Ad0608476EfA952De1cD8e574dB68df5f16",
+        "wallets": ["0x1e198Ad0608476EfA952De1cD8e574dB68df5f16"],
     },
     {
         "name": "Alpha capital",
         "id": "66cb31048376632dcc6a2a66",
-        "wallet": "0xD172B9C227361FCf6151e802e1F09C084964BDCD",
+        "wallets": ["0xD172B9C227361FCf6151e802e1F09C084964BDCD"],
     },
     {
         "name": "Funded Peaks",
         "id": "66cb310d796c0ab0a80632a3",
-        "wallet": "0xd0D96d8Ad9c5f92b66A3b0d721c70D31da582C38",
+        "wallets": ["0xd0D96d8Ad9c5f92b66A3b0d721c70D31da582C38"],
     },
     {
         "name": "MYFUNDEDFX",
         "id": "66cb6fb78376632dcc9fa7a3",
-        "wallet": "0x5534A2237f866F3089901A7D17f0E50dD7824c8D",
+        "wallets": ["0x5534A2237f866F3089901A7D17f0E50dD7824c8D"],
     },
     {
         "name": "E8 markets",
         "id": "66cb6fc8d7c63944198a4e21",
-        "wallet": "0xD19e945EEea57475B791C20112Ebb4B628f5B95c",
+        "wallets": ["0xD19e945EEea57475B791C20112Ebb4B628f5B95c"],
     },
     {
         "name": "The 5ers",
         "id": "66cb6ff62a689130fc027367",
-        "wallet": "0x349B0Ed1520eAE1472f57eaC77e390A1eCB0C677",
+        "wallets": ["0x349B0Ed1520eAE1472f57eaC77e390A1eCB0C677"],
     },
     {
         "name": "Pip farm",
         "id": "66cb7008ecc3e28071dc267c",
-        "wallet": "0x442775D9FcbcD269bbdB7677ebd7f7D34dA5569F",
+        "wallets": ["0x442775D9FcbcD269bbdB7677ebd7f7D34dA5569F"],
     },
     {
         "name": "My flash funding",
         "id": "66cb70231238deea1b8e0dd3",
-        "wallet": "0xeCa4DcC2D6B0ab4A496A3bDEC3cA07f95022cBdB",
+        "wallets": ["0xeCa4DcC2D6B0ab4A496A3bDEC3cA07f95022cBdB"],
     },
     {
         "name": "Instant funding",
         "id": "66cb7033c6fa014536c41546",
-        "wallet": "0xA3f21b162fA5a523e12590f2915cA418587Cf626",
+        "wallets": ["0xA3f21b162fA5a523e12590f2915cA418587Cf626"],
     },
     {
         "name": "Blue guardian",
         "id": "66cb70555230d82035fff546",
-        "wallet": "0x68035843020B6c0CD94DD29c273FFF13c8e9A914",
+        "wallets": ["0x68035843020B6c0CD94DD29c273FFF13c8e9A914"],
     },
     {
         "name": "ascend X",
         "id": "66cb6fa0ffd1354e499a8b2c",
-        "wallet": "0x858fcd36e5a8aBD64b955b1E2a70F3F75A464AFd",
+        "wallets": ["0x858fcd36e5a8aBD64b955b1E2a70F3F75A464AFd"],
     },
     {
         "name": "FXIFY",
         "id": "66cb83bdedabdad8909e66f5",
-        "wallet": "0x36109F4D6804f391D830939c0C0e43EFc41a7486",
+        "wallets": ["0x36109F4D6804f391D830939c0C0e43EFc41a7486"],
     },
     {
         "name": "Funding Traders",
         "id": "66cba1ffecc3e2807105cd15",
-        "wallet": "0xe497F35cd0b928b686e9fb2e3cD131949D1841Cf",
+        "wallets": ["0xe497F35cd0b928b686e9fb2e3cD131949D1841Cf"],
     },
     {
         "name": "Funded Next",
         "id": "66cc776ec15ebbd49e0b8f0c",
-        "wallet": "0x2b9a16e8448091159cc2b2a205b11f2368d53cb6",
+        "wallets": ["0x2b9a16e8448091159cc2b2a205b11f2368d53cb6"],
     },
     {
         "name": "Artic Funding",
         "id": "66cf2f4777b50737924ac87e",
-        "wallet": "0xD4b7E42c1E0C0fDb4285d1dcfCe253C221a30b39",
+        "wallets": ["0xD4b7E42c1E0C0fDb4285d1dcfCe253C221a30b39"],
     },
     {
         "name": "TopTierTrader",
         "id": "66d26a7e7fa8b1bcae4c4bbc",
-        "wallet": "0x2265f428a8803bcc6Ccf4A405E627B0c51f33389",
+        "wallets": ["0x2265f428a8803bcc6Ccf4A405E627B0c51f33389"],
     },
     {
         "name": "My Crypto Funding",
         "id": "66f530e4e168c74898b83214",
-        "wallet": "0x390A8b588fAf26742f6C5433E29449B35bD35302",
+        "wallets": ["0x390A8b588fAf26742f6C5433E29449B35bD35302"],
     },
     # {
     #     "name": "FastTrackTrading",
@@ -139,27 +143,27 @@ FIRMS = [
     {
         "name": "My Funded Futures",
         "id": "66f5311737c03a78ac3bba3b",
-        "wallet": "0x9f28BaC1f793790dd3b0c2f8945F7cA28874f7A6",
+        "wallets": ["0x9f28BaC1f793790dd3b0c2f8945F7cA28874f7A6"],
     },
     {
         "name": "Elite Trader Funding",
         "id": "66f531250b9009aedd25e1b1",
-        "wallet": "0x8b028Fb68b277BBb5e6F231594771F010F123ddf",
+        "wallets": ["0x8b028Fb68b277BBb5e6F231594771F010F123ddf"],
     },
     {
         "name": "Aqua Funded",
         "id": "66f5312de2de07e06d55f13f",
-        "wallet": "0x6F405a66cb4048fb05E72D74FCCcD5073697c469",
+        "wallets": ["0x6F405a66cb4048fb05E72D74FCCcD5073697c469"],
     },
     {
         "name": "Monevis",
         "id": "66f700743428c39fd86601a0",
-        "wallet": "0x7AF51b735Ef5AB57d6a9ebcA163FdE7A0A291c5b",
+        "wallets": ["0x7AF51b735Ef5AB57d6a9ebcA163FdE7A0A291c5b"],
     },
     {
         "name": "Bespoke Funding",
         "id": "66f531423b1d1c6145ff3ab4",
-        "wallet": "0xAB87be11b7c9341661786af6026728d6508e2cDe",
+        "wallets": ["0xAB87be11b7c9341661786af6026728d6508e2cDe"],
     },
 ]
 
@@ -185,6 +189,7 @@ class TimeRangeSummary(BaseModel):
 class FirmSummary(BaseModel):
     name: str
     id: str
+    wallet: str
     last_24h: TimeRangeSummary
     last_7d: TimeRangeSummary
     last_30d: TimeRangeSummary
@@ -280,19 +285,21 @@ def summarize_transactions(txs: List[Payout]) -> TimeRangeSummary:
     )
 
 
-def process_transactions(transactions: List[Dict], wallet_address: str) -> FirmSummary:
-    logger.info("Processing transactions for wallet: %s", wallet_address)
+def process_transactions(
+    transactions: List[Dict], wallets: List[str], firm: Dict
+) -> FirmSummary:
+    logger.info("Processing transactions for firm: %s", firm["name"])
     outgoing_txs = [
         Payout(
             value=float(tx["value"]) / (10 ** int(tx["tokenDecimal"])),
             timestamp=datetime.fromtimestamp(int(tx["timeStamp"])),
         )
         for tx in transactions
-        if tx["from"].lower() == wallet_address.lower()
+        if tx["from"].lower() in [wallet.lower() for wallet in wallets]
     ]
 
     if not outgoing_txs:
-        logger.warning("No outgoing transactions found for wallet: %s", wallet_address)
+        logger.warning("No outgoing transactions found for firm: %s", firm["name"])
         return None
 
     # Sort transactions by timestamp, most recent first
@@ -336,16 +343,9 @@ def process_transactions(transactions: List[Dict], wallet_address: str) -> FirmS
         )
 
     firm_summary = FirmSummary(
-        name=next(
-            firm["name"]
-            for firm in FIRMS
-            if firm["wallet"].lower() == wallet_address.lower()
-        ),
-        id=next(
-            firm["id"]
-            for firm in FIRMS
-            if firm["wallet"].lower() == wallet_address.lower()
-        ),
+        name=firm["name"],
+        id=firm["id"],
+        wallet=", ".join(wallets),  # Include all wallet addresses
         last_24h=summarize_transactions(last_24h),
         last_7d=summarize_transactions(last_7d),
         last_30d=last_30d_summary,
@@ -356,9 +356,6 @@ def process_transactions(transactions: List[Dict], wallet_address: str) -> FirmS
         time_since_last_payout=time_since_last_payout,
         percentage_change_from_previous_month=percentage_change_str,
     )
-    logger.info(
-        "Processed %d transactions for wallet: %s", len(outgoing_txs), wallet_address
-    )
     return firm_summary
 
 
@@ -366,17 +363,39 @@ async def update_cache():
     while True:
         logger.info("Starting cache update")
         for firm in FIRMS:
-            wallet = firm["wallet"].lower()
-            try:
-                transactions = await get_token_transactions(wallet)
-                summary = process_transactions(transactions, wallet)
-                if summary:
-                    cache[wallet] = summary
-                    logger.info("Updated cache for wallet: %s", wallet)
-                else:
-                    logger.warning("No summary generated for wallet: %s", wallet)
-            except Exception as e:
-                logger.error("Error updating cache for wallet %s: %s", wallet, str(e))
+            all_transactions = []
+            wallets = (
+                firm["wallets"]
+                if isinstance(firm["wallets"], list)
+                else [firm["wallets"]]
+            )
+
+            for wallet in wallets:
+                wallet = wallet.lower()
+                try:
+                    transactions = await get_token_transactions(wallet)
+                    all_transactions.extend(transactions)
+                except Exception as e:
+                    logger.error(
+                        "Error fetching transactions for wallet %s: %s", wallet, str(e)
+                    )
+
+            if all_transactions:
+                try:
+                    summary = process_transactions(all_transactions, wallets, firm)
+                    if summary:
+                        cache[firm["id"]] = summary
+                        logger.info("Updated cache for firm: %s", firm["name"])
+                    else:
+                        logger.warning(
+                            "No summary generated for firm: %s", firm["name"]
+                        )
+                except Exception as e:
+                    logger.error(
+                        "Error processing transactions for firm %s: %s",
+                        firm["name"],
+                        str(e),
+                    )
 
         logger.info(
             "Cache update completed. Next update in %d seconds", API_UPDATE_INTERVAL
@@ -395,21 +414,32 @@ async def get_firms_summary():
     logger.info("Received request for firms summary")
     summaries = []
     for firm in FIRMS:
-        wallet = firm["wallet"].lower()
-        summary = cache.get(wallet)
+        summary = cache.get(firm["id"])
         if summary:
             summaries.append(summary)
         else:
             logger.warning(
-                "No cached summary for wallet: %s. Fetching and processing...", wallet
+                "No cached summary for firm: %s. Fetching and processing...",
+                firm["name"],
             )
-            transactions = await get_token_transactions(wallet)
-            summary = process_transactions(transactions, wallet)
+            all_transactions = []
+            wallets = (
+                firm["wallets"]
+                if isinstance(firm["wallets"], list)
+                else [firm["wallets"]]
+            )
+
+            for wallet in wallets:
+                wallet = wallet.lower()
+                transactions = await get_token_transactions(wallet)
+                all_transactions.extend(transactions)
+
+            summary = process_transactions(all_transactions, wallets, firm)
             if summary:
-                cache[wallet] = summary
+                cache[firm["id"]] = summary
                 summaries.append(summary)
             else:
-                logger.error("Failed to generate summary for wallet: %s", wallet)
+                logger.error("Failed to generate summary for firm: %s", firm["name"])
 
     logger.info("Returning summaries for %d firms", len(summaries))
     return summaries
@@ -433,9 +463,9 @@ class CustomJSONEncoder(json.JSONEncoder):
 #         try:
 #             while True:
 #                 summaries = [
-#                     cache.get(firm["wallet"].lower())
+#                     cache.get(firm["wallets"][0])
 #                     for firm in FIRMS
-#                     if cache.get(firm["wallet"].lower())
+#                     if cache.get(firm["wallets"][0])
 #                 ]
 #                 json_compatible_summaries = json.dumps(summaries, cls=CustomJSONEncoder)
 #                 await websocket.send_text(json_compatible_summaries)
