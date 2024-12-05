@@ -1296,3 +1296,159 @@
 2024-12-03 16:31:50,033 - main - INFO - Cache update completed. Next update in 18000 seconds
 2024-12-03 16:32:15,353 - main - INFO - Received request for firms summary
 2024-12-03 16:32:15,358 - main - INFO - Returning summaries for 23 firms
+2024-12-03 16:37:28,182 - main - INFO - Starting up the application
+2024-12-03 16:37:28,183 - main - INFO - Starting cache update
+2024-12-03 16:37:28,183 - main - INFO - Fetching transactions for wallet: 0xd3e70282420e6349ba3146bc299c4943f9782667
+2024-12-03 16:37:29,977 - main - INFO - Successfully fetched 2604 transactions for 0xd3e70282420e6349ba3146bc299c4943f9782667
+2024-12-03 16:37:32,184 - main - INFO - Fetching transactions for wallet: 0x0db777559702d28509dac1d7a8a473a0f53d96d6
+2024-12-03 16:37:33,027 - main - INFO - Successfully fetched 84 transactions for 0x0db777559702d28509dac1d7a8a473a0f53d96d6
+2024-12-03 16:37:36,185 - main - INFO - Fetching transactions for wallet: 0xe897c6648a4160f34369173a8403b551bdc96ffb
+2024-12-03 16:37:36,834 - main - INFO - Successfully fetched 17 transactions for 0xe897c6648a4160f34369173a8403b551bdc96ffb
+2024-12-03 16:37:36,835 - main - INFO - Processing transactions for firm: Goat Funded Trader
+2024-12-03 16:37:36,851 - main - INFO - The specific transaction is the last payout from any wallet.
+2024-12-03 16:37:36,858 - main - INFO - Updated cache for firm: Goat Funded Trader
+2024-12-03 16:37:40,186 - main - INFO - Fetching transactions for wallet: 0x1e198ad0608476efa952de1cd8e574db68df5f16
+2024-12-03 16:37:43,827 - main - INFO - Successfully fetched 10000 transactions for 0x1e198ad0608476efa952de1cd8e574db68df5f16
+2024-12-03 16:37:43,828 - main - INFO - Processing transactions for firm: Funding pips
+2024-12-03 16:37:43,869 - main - INFO - Updated cache for firm: Funding pips
+2024-12-03 16:37:44,187 - main - INFO - Fetching transactions for wallet: 0xd172b9c227361fcf6151e802e1f09c084964bdcd
+2024-12-03 16:37:48,679 - main - INFO - Successfully fetched 10000 transactions for 0xd172b9c227361fcf6151e802e1f09c084964bdcd
+2024-12-03 16:37:48,683 - main - INFO - Processing transactions for firm: Alpha capital
+2024-12-03 16:37:48,722 - main - INFO - Updated cache for firm: Alpha capital
+2024-12-03 16:37:48,723 - main - INFO - Fetching transactions for wallet: 0xd0d96d8ad9c5f92b66a3b0d721c70d31da582c38
+2024-12-03 16:37:50,158 - main - INFO - Successfully fetched 941 transactions for 0xd0d96d8ad9c5f92b66a3b0d721c70d31da582c38
+2024-12-03 16:37:50,161 - main - INFO - Processing transactions for firm: Funded Peaks
+2024-12-03 16:37:50,166 - main - INFO - Updated cache for firm: Funded Peaks
+2024-12-03 16:37:52,724 - main - INFO - Fetching transactions for wallet: 0x5534a2237f866f3089901a7d17f0e50dd7824c8d
+2024-12-03 16:37:56,605 - main - INFO - Successfully fetched 8373 transactions for 0x5534a2237f866f3089901a7d17f0e50dd7824c8d
+2024-12-03 16:37:56,606 - main - INFO - Processing transactions for firm: MYFUNDEDFX
+2024-12-03 16:37:56,643 - main - INFO - Updated cache for firm: MYFUNDEDFX
+2024-12-03 16:37:56,725 - main - INFO - Fetching transactions for wallet: 0xd19e945eeea57475b791c20112ebb4b628f5b95c
+2024-12-03 16:37:58,817 - main - INFO - Successfully fetched 4138 transactions for 0xd19e945eeea57475b791c20112ebb4b628f5b95c
+2024-12-03 16:37:58,822 - main - INFO - Processing transactions for firm: E8 markets
+2024-12-03 16:37:58,837 - main - INFO - Updated cache for firm: E8 markets
+2024-12-03 16:38:00,726 - main - INFO - Fetching transactions for wallet: 0x349b0ed1520eae1472f57eac77e390a1ecb0c677
+2024-12-03 16:38:03,871 - main - INFO - Successfully fetched 6088 transactions for 0x349b0ed1520eae1472f57eac77e390a1ecb0c677
+2024-12-03 16:38:03,874 - main - INFO - Processing transactions for firm: The 5ers
+2024-12-03 16:38:03,914 - main - INFO - Updated cache for firm: The 5ers
+2024-12-03 16:38:04,726 - main - INFO - Fetching transactions for wallet: 0x442775d9fcbcd269bbdb7677ebd7f7d34da5569f
+2024-12-03 16:38:05,655 - main - INFO - Successfully fetched 307 transactions for 0x442775d9fcbcd269bbdb7677ebd7f7d34da5569f
+2024-12-03 16:38:05,658 - main - INFO - Processing transactions for firm: Pip farm
+2024-12-03 16:38:05,659 - main - INFO - Updated cache for firm: Pip farm
+2024-12-03 16:38:08,727 - main - INFO - Fetching transactions for wallet: 0xeca4dcc2d6b0ab4a496a3bdec3ca07f95022cbdb
+2024-12-03 16:38:09,818 - main - INFO - Successfully fetched 572 transactions for 0xeca4dcc2d6b0ab4a496a3bdec3ca07f95022cbdb
+2024-12-03 16:38:09,819 - main - INFO - Processing transactions for firm: My flash funding
+2024-12-03 16:38:09,821 - main - INFO - Updated cache for firm: My flash funding
+2024-12-03 16:38:12,728 - main - INFO - Fetching transactions for wallet: 0xa3f21b162fa5a523e12590f2915ca418587cf626
+2024-12-03 16:38:14,817 - main - INFO - Received request for firms summary
+2024-12-03 16:38:14,817 - main - WARNING - No cached summary for firm: Instant funding. Fetching and processing...
+2024-12-03 16:38:14,996 - main - INFO - Successfully fetched 5706 transactions for 0xa3f21b162fa5a523e12590f2915ca418587cf626
+2024-12-03 16:38:14,997 - main - INFO - Processing transactions for firm: Instant funding
+2024-12-03 16:38:15,024 - main - INFO - Updated cache for firm: Instant funding
+2024-12-03 16:38:16,729 - main - INFO - Fetching transactions for wallet: 0x68035843020b6c0cd94dd29c273fff13c8e9a914
+2024-12-03 16:38:16,730 - main - INFO - Fetching transactions for wallet: 0xa3f21b162fa5a523e12590f2915ca418587cf626
+2024-12-03 16:38:18,928 - main - INFO - Successfully fetched 2990 transactions for 0x68035843020b6c0cd94dd29c273fff13c8e9a914
+2024-12-03 16:38:18,933 - main - INFO - Processing transactions for firm: Blue guardian
+2024-12-03 16:38:18,950 - main - INFO - Updated cache for firm: Blue guardian
+2024-12-03 16:38:19,255 - main - INFO - Successfully fetched 5706 transactions for 0xa3f21b162fa5a523e12590f2915ca418587cf626
+2024-12-03 16:38:19,255 - main - INFO - Processing transactions for firm: Instant funding
+2024-12-03 16:38:19,278 - main - WARNING - No cached summary for firm: ascend X. Fetching and processing...
+2024-12-03 16:38:20,730 - main - INFO - Fetching transactions for wallet: 0x858fcd36e5a8abd64b955b1e2a70f3f75a464afd
+2024-12-03 16:38:20,731 - main - INFO - Fetching transactions for wallet: 0x858fcd36e5a8abd64b955b1e2a70f3f75a464afd
+2024-12-03 16:38:21,923 - main - INFO - Successfully fetched 957 transactions for 0x858fcd36e5a8abd64b955b1e2a70f3f75a464afd
+2024-12-03 16:38:21,925 - main - INFO - Processing transactions for firm: ascend X
+2024-12-03 16:38:21,929 - main - INFO - Updated cache for firm: ascend X
+2024-12-03 16:38:21,991 - main - INFO - Successfully fetched 957 transactions for 0x858fcd36e5a8abd64b955b1e2a70f3f75a464afd
+2024-12-03 16:38:21,993 - main - INFO - Processing transactions for firm: ascend X
+2024-12-03 16:38:21,997 - main - WARNING - No cached summary for firm: FXIFY. Fetching and processing...
+2024-12-03 16:38:24,732 - main - INFO - Fetching transactions for wallet: 0x36109f4d6804f391d830939c0c0e43efc41a7486
+2024-12-03 16:38:24,734 - main - INFO - Fetching transactions for wallet: 0x36109f4d6804f391d830939c0c0e43efc41a7486
+2024-12-03 16:38:27,836 - main - INFO - Successfully fetched 8138 transactions for 0x36109f4d6804f391d830939c0c0e43efc41a7486
+2024-12-03 16:38:27,838 - main - INFO - Processing transactions for firm: FXIFY
+2024-12-03 16:38:27,884 - main - WARNING - No cached summary for firm: Funding Traders. Fetching and processing...
+2024-12-03 16:38:27,907 - main - INFO - Successfully fetched 8138 transactions for 0x36109f4d6804f391d830939c0c0e43efc41a7486
+2024-12-03 16:38:27,908 - main - INFO - Processing transactions for firm: FXIFY
+2024-12-03 16:38:27,938 - main - INFO - Updated cache for firm: FXIFY
+2024-12-03 16:38:28,733 - main - INFO - Fetching transactions for wallet: 0xe497f35cd0b928b686e9fb2e3cd131949d1841cf
+2024-12-03 16:38:28,734 - main - INFO - Fetching transactions for wallet: 0xe497f35cd0b928b686e9fb2e3cd131949d1841cf
+2024-12-03 16:38:29,656 - main - INFO - Successfully fetched 785 transactions for 0xe497f35cd0b928b686e9fb2e3cd131949d1841cf
+2024-12-03 16:38:29,660 - main - INFO - Processing transactions for firm: Funding Traders
+2024-12-03 16:38:29,664 - main - INFO - Updated cache for firm: Funding Traders
+2024-12-03 16:38:29,843 - main - INFO - Successfully fetched 785 transactions for 0xe497f35cd0b928b686e9fb2e3cd131949d1841cf
+2024-12-03 16:38:29,847 - main - INFO - Processing transactions for firm: Funding Traders
+2024-12-03 16:38:29,851 - main - WARNING - No cached summary for firm: Funded Next. Fetching and processing...
+2024-12-03 16:38:32,734 - main - INFO - Fetching transactions for wallet: 0x2b9a16e8448091159cc2b2a205b11f2368d53cb6
+2024-12-03 16:38:32,735 - main - INFO - Fetching transactions for wallet: 0x2b9a16e8448091159cc2b2a205b11f2368d53cb6
+2024-12-03 16:38:35,120 - main - INFO - Successfully fetched 7406 transactions for 0x2b9a16e8448091159cc2b2a205b11f2368d53cb6
+2024-12-03 16:38:35,121 - main - INFO - Processing transactions for firm: Funded Next
+2024-12-03 16:38:35,150 - main - WARNING - No cached summary for firm: Artic Funding. Fetching and processing...
+2024-12-03 16:38:35,332 - main - INFO - Successfully fetched 7406 transactions for 0x2b9a16e8448091159cc2b2a205b11f2368d53cb6
+2024-12-03 16:38:35,333 - main - INFO - Processing transactions for firm: Funded Next
+2024-12-03 16:38:35,371 - main - INFO - Updated cache for firm: Funded Next
+2024-12-03 16:38:36,735 - main - INFO - Fetching transactions for wallet: 0xd4b7e42c1e0c0fdb4285d1dcfce253c221a30b39
+2024-12-03 16:38:36,735 - main - INFO - Fetching transactions for wallet: 0xd4b7e42c1e0c0fdb4285d1dcfce253c221a30b39
+2024-12-03 16:38:37,516 - main - INFO - Successfully fetched 206 transactions for 0xd4b7e42c1e0c0fdb4285d1dcfce253c221a30b39
+2024-12-03 16:38:37,521 - main - INFO - Processing transactions for firm: Artic Funding
+2024-12-03 16:38:37,522 - main - INFO - Updated cache for firm: Artic Funding
+2024-12-03 16:38:37,726 - main - INFO - Successfully fetched 206 transactions for 0xd4b7e42c1e0c0fdb4285d1dcfce253c221a30b39
+2024-12-03 16:38:37,731 - main - INFO - Processing transactions for firm: Artic Funding
+2024-12-03 16:38:37,733 - main - WARNING - No cached summary for firm: TopTierTrader. Fetching and processing...
+2024-12-03 16:38:40,736 - main - INFO - Fetching transactions for wallet: 0x2265f428a8803bcc6ccf4a405e627b0c51f33389
+2024-12-03 16:38:40,738 - main - INFO - Fetching transactions for wallet: 0x2265f428a8803bcc6ccf4a405e627b0c51f33389
+2024-12-03 16:38:41,746 - main - INFO - Successfully fetched 432 transactions for 0x2265f428a8803bcc6ccf4a405e627b0c51f33389
+2024-12-03 16:38:41,747 - main - INFO - Processing transactions for firm: TopTierTrader
+2024-12-03 16:38:41,749 - main - INFO - Updated cache for firm: TopTierTrader
+2024-12-03 16:38:41,761 - main - INFO - Successfully fetched 432 transactions for 0x2265f428a8803bcc6ccf4a405e627b0c51f33389
+2024-12-03 16:38:41,762 - main - INFO - Processing transactions for firm: TopTierTrader
+2024-12-03 16:38:41,764 - main - WARNING - No cached summary for firm: My Crypto Funding. Fetching and processing...
+2024-12-03 16:38:44,737 - main - INFO - Fetching transactions for wallet: 0x390a8b588faf26742f6c5433e29449b35bd35302
+2024-12-03 16:38:44,738 - main - INFO - Fetching transactions for wallet: 0x390a8b588faf26742f6c5433e29449b35bd35302
+2024-12-03 16:38:45,517 - main - INFO - Successfully fetched 11 transactions for 0x390a8b588faf26742f6c5433e29449b35bd35302
+2024-12-03 16:38:45,519 - main - INFO - Processing transactions for firm: My Crypto Funding
+2024-12-03 16:38:45,519 - main - WARNING - No cached summary for firm: My Funded Futures. Fetching and processing...
+2024-12-03 16:38:45,597 - main - INFO - Successfully fetched 11 transactions for 0x390a8b588faf26742f6c5433e29449b35bd35302
+2024-12-03 16:38:45,597 - main - INFO - Processing transactions for firm: My Crypto Funding
+2024-12-03 16:38:45,598 - main - INFO - Updated cache for firm: My Crypto Funding
+2024-12-03 16:38:48,738 - main - INFO - Fetching transactions for wallet: 0x9f28bac1f793790dd3b0c2f8945f7ca28874f7a6
+2024-12-03 16:38:48,740 - main - INFO - Fetching transactions for wallet: 0x9f28bac1f793790dd3b0c2f8945f7ca28874f7a6
+2024-12-03 16:38:53,134 - main - INFO - Successfully fetched 10000 transactions for 0x9f28bac1f793790dd3b0c2f8945f7ca28874f7a6
+2024-12-03 16:38:53,136 - main - INFO - Processing transactions for firm: My Funded Futures
+2024-12-03 16:38:53,175 - main - WARNING - No cached summary for firm: Elite Trader Funding. Fetching and processing...
+2024-12-03 16:38:53,175 - main - INFO - Fetching transactions for wallet: 0x8b028fb68b277bbb5e6f231594771f010f123ddf
+2024-12-03 16:38:53,205 - main - INFO - Successfully fetched 10000 transactions for 0x9f28bac1f793790dd3b0c2f8945f7ca28874f7a6
+2024-12-03 16:38:53,205 - main - INFO - Processing transactions for firm: My Funded Futures
+2024-12-03 16:38:53,246 - main - INFO - Updated cache for firm: My Funded Futures
+2024-12-03 16:38:54,568 - main - INFO - Successfully fetched 1289 transactions for 0x8b028fb68b277bbb5e6f231594771f010f123ddf
+2024-12-03 16:38:54,571 - main - INFO - Processing transactions for firm: Elite Trader Funding
+2024-12-03 16:38:54,588 - main - WARNING - No cached summary for firm: Aqua Funded. Fetching and processing...
+2024-12-03 16:38:57,176 - main - INFO - Fetching transactions for wallet: 0x6f405a66cb4048fb05e72d74fcccd5073697c469
+2024-12-03 16:38:57,179 - main - INFO - Fetching transactions for wallet: 0x8b028fb68b277bbb5e6f231594771f010f123ddf
+2024-12-03 16:38:58,435 - main - INFO - Successfully fetched 1289 transactions for 0x8b028fb68b277bbb5e6f231594771f010f123ddf
+2024-12-03 16:38:58,441 - main - INFO - Processing transactions for firm: Elite Trader Funding
+2024-12-03 16:38:58,449 - main - INFO - Updated cache for firm: Elite Trader Funding
+2024-12-03 16:38:58,630 - main - INFO - Successfully fetched 803 transactions for 0x6f405a66cb4048fb05e72d74fcccd5073697c469
+2024-12-03 16:38:58,632 - main - INFO - Processing transactions for firm: Aqua Funded
+2024-12-03 16:38:58,635 - main - WARNING - No cached summary for firm: Monevis. Fetching and processing...
+2024-12-03 16:39:01,177 - main - INFO - Fetching transactions for wallet: 0x7af51b735ef5ab57d6a9ebca163fde7a0a291c5b
+2024-12-03 16:39:01,178 - main - INFO - Fetching transactions for wallet: 0x6f405a66cb4048fb05e72d74fcccd5073697c469
+2024-12-03 16:39:01,920 - main - INFO - Successfully fetched 265 transactions for 0x7af51b735ef5ab57d6a9ebca163fde7a0a291c5b
+2024-12-03 16:39:01,920 - main - INFO - Processing transactions for firm: Monevis
+2024-12-03 16:39:01,921 - main - WARNING - No cached summary for firm: Bespoke Funding. Fetching and processing...
+2024-12-03 16:39:02,245 - main - INFO - Successfully fetched 803 transactions for 0x6f405a66cb4048fb05e72d74fcccd5073697c469
+2024-12-03 16:39:02,245 - main - INFO - Processing transactions for firm: Aqua Funded
+2024-12-03 16:39:02,249 - main - INFO - Updated cache for firm: Aqua Funded
+2024-12-03 16:39:05,178 - main - INFO - Fetching transactions for wallet: 0xab87be11b7c9341661786af6026728d6508e2cde
+2024-12-03 16:39:05,181 - main - INFO - Fetching transactions for wallet: 0x7af51b735ef5ab57d6a9ebca163fde7a0a291c5b
+2024-12-03 16:39:06,111 - main - INFO - Successfully fetched 265 transactions for 0x7af51b735ef5ab57d6a9ebca163fde7a0a291c5b
+2024-12-03 16:39:06,112 - main - INFO - Processing transactions for firm: Monevis
+2024-12-03 16:39:06,115 - main - INFO - Updated cache for firm: Monevis
+2024-12-03 16:39:06,252 - main - INFO - Successfully fetched 586 transactions for 0xab87be11b7c9341661786af6026728d6508e2cde
+2024-12-03 16:39:06,252 - main - INFO - Processing transactions for firm: Bespoke Funding
+2024-12-03 16:39:06,254 - main - INFO - Returning summaries for 23 firms
+2024-12-03 16:39:09,180 - main - INFO - Fetching transactions for wallet: 0xab87be11b7c9341661786af6026728d6508e2cde
+2024-12-03 16:39:10,392 - main - INFO - Successfully fetched 586 transactions for 0xab87be11b7c9341661786af6026728d6508e2cde
+2024-12-03 16:39:10,392 - main - INFO - Processing transactions for firm: Bespoke Funding
+2024-12-03 16:39:10,395 - main - INFO - Updated cache for firm: Bespoke Funding
+2024-12-03 16:39:10,395 - main - INFO - Cache update completed. Next update in 18000 seconds
+2024-12-03 16:41:41,118 - main - INFO - Received request for firms summary
+2024-12-03 16:41:41,119 - main - INFO - Returning summaries for 23 firms

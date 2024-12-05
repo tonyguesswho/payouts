@@ -165,6 +165,11 @@ FIRMS = [
         "id": "66f531423b1d1c6145ff3ab4",
         "wallets": ["0xAB87be11b7c9341661786af6026728d6508e2cDe"],
     },
+    {
+        "name": "Goat Funded Futures",
+        "id": "6751b8b3461eb55ecd1ebabd",
+        "wallets": ["0x8732927164bfA58EE8AaB34043bDB41F13e8b1f1"],
+    },
 ]
 
 # Cache to store processed FirmSummary objects (24 hours TTL)
@@ -174,6 +179,7 @@ cache = TTLCache(maxsize=100, ttl=24 * 60 * 60)
 class Payout(BaseModel):
     value: float
     timestamp: datetime
+    wallet: str
 
     class Config:
         json_encoders = {datetime: lambda v: v.isoformat()}
@@ -293,6 +299,7 @@ def process_transactions(
         Payout(
             value=float(tx["value"]) / (10 ** int(tx["tokenDecimal"])),
             timestamp=datetime.fromtimestamp(int(tx["timeStamp"])),
+            wallet=tx["from"].lower(),  # Include the wallet address
         )
         for tx in transactions
         if tx["from"].lower() in [wallet.lower() for wallet in wallets]
@@ -304,6 +311,20 @@ def process_transactions(
 
     # Sort transactions by timestamp, most recent first
     outgoing_txs.sort(key=lambda x: x.timestamp, reverse=True)
+
+    # Check if a specific transaction is the last payout
+    last_payout = outgoing_txs[0] if outgoing_txs else None
+    specific_transaction = Payout(
+        value=773.67, timestamp=datetime.fromisoformat("2024-12-03T00:00:04"), wallet=""
+    )
+    is_last_payout = (
+        last_payout
+        and last_payout.value == specific_transaction.value
+        and last_payout.timestamp == specific_transaction.timestamp
+    )
+
+    if is_last_payout:
+        logger.info("The specific transaction is the last payout from any wallet.")
 
     # Sort transactions by value, largest first, for top 10 largest payouts
     top_10_largest = sorted(outgoing_txs, key=lambda x: x.value, reverse=True)[:10]
