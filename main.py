@@ -294,90 +294,145 @@ def summarize_transactions(txs: List[Payout]) -> TimeRangeSummary:
 def process_transactions(
     transactions: List[Dict], wallets: List[str], firm: Dict
 ) -> FirmSummary:
-    logger.info("Processing transactions for firm: %s", firm["name"])
-    outgoing_txs = [
-        Payout(
-            value=float(tx["value"]) / (10 ** int(tx["tokenDecimal"])),
-            timestamp=datetime.fromtimestamp(int(tx["timeStamp"])),
-            wallet=tx["from"].lower(),  # Include the wallet address
+    try:
+        logger.info("Processing transactions for firm: %s", firm["name"])
+        outgoing_txs = [
+            Payout(
+                value=float(tx["value"]) / (10 ** int(tx["tokenDecimal"])),
+                timestamp=datetime.fromtimestamp(int(tx["timeStamp"])),
+                wallet=tx["from"].lower(),
+            )
+            for tx in transactions
+            if tx["from"].lower() in [wallet.lower() for wallet in wallets]
+        ]
+
+        if not outgoing_txs:
+            logger.warning("No outgoing transactions found for firm: %s", firm["name"])
+            # Return a default summary with zero values instead of None
+            return FirmSummary(
+                name=firm["name"],
+                id=firm["id"],
+                wallet=", ".join(wallets),
+                last_24h=TimeRangeSummary(
+                    total_payouts=0,
+                    num_payouts=0,
+                    largest_single_payout=0,
+                    average_payout_size=0,
+                ),
+                last_7d=TimeRangeSummary(
+                    total_payouts=0,
+                    num_payouts=0,
+                    largest_single_payout=0,
+                    average_payout_size=0,
+                ),
+                last_30d=TimeRangeSummary(
+                    total_payouts=0,
+                    num_payouts=0,
+                    largest_single_payout=0,
+                    average_payout_size=0,
+                ),
+                previous_30d=TimeRangeSummary(
+                    total_payouts=0,
+                    num_payouts=0,
+                    largest_single_payout=0,
+                    average_payout_size=0,
+                ),
+                all_time=TimeRangeSummary(
+                    total_payouts=0,
+                    num_payouts=0,
+                    largest_single_payout=0,
+                    average_payout_size=0,
+                ),
+                last_10_payouts=[],
+                top_10_largest_payouts=[],
+                time_since_last_payout=None,
+                percentage_change_from_previous_month="0.00%",
+            )
+
+        # Sort transactions by timestamp, most recent first
+        outgoing_txs.sort(key=lambda x: x.timestamp, reverse=True)
+
+        # Check if a specific transaction is the last payout
+        last_payout = outgoing_txs[0] if outgoing_txs else None
+        specific_transaction = Payout(
+            value=773.67,
+            timestamp=datetime.fromisoformat("2024-12-03T00:00:04"),
+            wallet="",
         )
-        for tx in transactions
-        if tx["from"].lower() in [wallet.lower() for wallet in wallets]
-    ]
-
-    if not outgoing_txs:
-        logger.warning("No outgoing transactions found for firm: %s", firm["name"])
-        return None
-
-    # Sort transactions by timestamp, most recent first
-    outgoing_txs.sort(key=lambda x: x.timestamp, reverse=True)
-
-    # Check if a specific transaction is the last payout
-    last_payout = outgoing_txs[0] if outgoing_txs else None
-    specific_transaction = Payout(
-        value=773.67, timestamp=datetime.fromisoformat("2024-12-03T00:00:04"), wallet=""
-    )
-    is_last_payout = (
-        last_payout
-        and last_payout.value == specific_transaction.value
-        and last_payout.timestamp == specific_transaction.timestamp
-    )
-
-    if is_last_payout:
-        logger.info("The specific transaction is the last payout from any wallet.")
-
-    # Sort transactions by value, largest first, for top 10 largest payouts
-    top_10_largest = sorted(outgoing_txs, key=lambda x: x.value, reverse=True)[:10]
-
-    now = datetime.now()
-    last_24h = [tx for tx in outgoing_txs if (now - tx.timestamp) <= timedelta(days=1)]
-    last_7d = [tx for tx in outgoing_txs if (now - tx.timestamp) <= timedelta(days=7)]
-    last_30d = [tx for tx in outgoing_txs if (now - tx.timestamp) <= timedelta(days=30)]
-    previous_30d = [
-        tx
-        for tx in outgoing_txs
-        if timedelta(days=30) < (now - tx.timestamp) <= timedelta(days=60)
-    ]
-
-    last_payout_timestamp = outgoing_txs[0].timestamp if outgoing_txs else now
-    time_since_last_payout = calculate_time_since_last_payout(last_payout_timestamp)
-
-    last_30d_summary = summarize_transactions(last_30d)
-    previous_30d_summary = summarize_transactions(previous_30d)
-
-    if previous_30d_summary.total_payouts > 0:
-        percentage_change = (
-            (last_30d_summary.total_payouts - previous_30d_summary.total_payouts)
-            / previous_30d_summary.total_payouts
-        ) * 100
-        percentage_change_str = (
-            f"+{percentage_change:.2f}%"
-            if percentage_change > 0
-            else f"{percentage_change:.2f}%"
-        )
-    else:
-        percentage_change = 100 if last_30d_summary.total_payouts > 0 else 0
-        percentage_change_str = (
-            f"+{percentage_change:.2f}%"
-            if percentage_change > 0
-            else f"{percentage_change:.2f}%"
+        is_last_payout = (
+            last_payout
+            and last_payout.value == specific_transaction.value
+            and last_payout.timestamp == specific_transaction.timestamp
         )
 
-    firm_summary = FirmSummary(
-        name=firm["name"],
-        id=firm["id"],
-        wallet=", ".join(wallets),  # Include all wallet addresses
-        last_24h=summarize_transactions(last_24h),
-        last_7d=summarize_transactions(last_7d),
-        last_30d=last_30d_summary,
-        previous_30d=previous_30d_summary,
-        all_time=summarize_transactions(outgoing_txs),
-        last_10_payouts=outgoing_txs[:10],
-        top_10_largest_payouts=top_10_largest,
-        time_since_last_payout=time_since_last_payout,
-        percentage_change_from_previous_month=percentage_change_str,
-    )
-    return firm_summary
+        if is_last_payout:
+            logger.info("The specific transaction is the last payout from any wallet.")
+
+        # Sort transactions by value, largest first, for top 10 largest payouts
+        top_10_largest = sorted(outgoing_txs, key=lambda x: x.value, reverse=True)[:10]
+
+        now = datetime.now()
+        last_24h = [
+            tx for tx in outgoing_txs if (now - tx.timestamp) <= timedelta(days=1)
+        ]
+        last_7d = [
+            tx for tx in outgoing_txs if (now - tx.timestamp) <= timedelta(days=7)
+        ]
+        last_30d = [
+            tx for tx in outgoing_txs if (now - tx.timestamp) <= timedelta(days=30)
+        ]
+        previous_30d = [
+            tx
+            for tx in outgoing_txs
+            if timedelta(days=30) < (now - tx.timestamp) <= timedelta(days=60)
+        ]
+
+        last_payout_timestamp = outgoing_txs[0].timestamp if outgoing_txs else now
+        time_since_last_payout = calculate_time_since_last_payout(last_payout_timestamp)
+
+        last_30d_summary = summarize_transactions(last_30d)
+        previous_30d_summary = summarize_transactions(previous_30d)
+
+        if previous_30d_summary.total_payouts > 0:
+            percentage_change = (
+                (last_30d_summary.total_payouts - previous_30d_summary.total_payouts)
+                / previous_30d_summary.total_payouts
+            ) * 100
+            percentage_change_str = (
+                f"+{percentage_change:.2f}%"
+                if percentage_change > 0
+                else f"{percentage_change:.2f}%"
+            )
+        else:
+            percentage_change = 100 if last_30d_summary.total_payouts > 0 else 0
+            percentage_change_str = (
+                f"+{percentage_change:.2f}%"
+                if percentage_change > 0
+                else f"{percentage_change:.2f}%"
+            )
+
+        firm_summary = FirmSummary(
+            name=firm["name"],
+            id=firm["id"],
+            wallet=", ".join(wallets),  # Include all wallet addresses
+            last_24h=summarize_transactions(last_24h),
+            last_7d=summarize_transactions(last_7d),
+            last_30d=last_30d_summary,
+            previous_30d=previous_30d_summary,
+            all_time=summarize_transactions(outgoing_txs),
+            last_10_payouts=outgoing_txs[:10],
+            top_10_largest_payouts=top_10_largest,
+            time_since_last_payout=time_since_last_payout,
+            percentage_change_from_previous_month=percentage_change_str,
+        )
+        return firm_summary
+
+    except Exception as e:
+        logger.error(f"Error processing transactions for firm {firm['name']}: {str(e)}")
+        logger.error(
+            f"Transactions data: {transactions[:2]}..."
+        )  # Log first few transactions for debugging
+        raise  # Re-raise the exception for higher-level handling
 
 
 async def update_cache():
@@ -435,10 +490,12 @@ async def get_firms_summary():
     logger.info("Received request for firms summary")
     summaries = []
     for firm in FIRMS:
-        summary = cache.get(firm["id"])
-        if summary:
-            summaries.append(summary)
-        else:
+        try:
+            summary = cache.get(firm["id"])
+            if summary:
+                summaries.append(summary)
+                continue
+
             logger.warning(
                 "No cached summary for firm: %s. Fetching and processing...",
                 firm["name"],
@@ -452,15 +509,34 @@ async def get_firms_summary():
 
             for wallet in wallets:
                 wallet = wallet.lower()
-                transactions = await get_token_transactions(wallet)
-                all_transactions.extend(transactions)
+                try:
+                    transactions = await get_token_transactions(wallet)
+                    all_transactions.extend(transactions)
+                except Exception as e:
+                    logger.error(
+                        "Error fetching transactions for wallet %s: %s", wallet, str(e)
+                    )
 
-            summary = process_transactions(all_transactions, wallets, firm)
-            if summary:
-                cache[firm["id"]] = summary
-                summaries.append(summary)
-            else:
-                logger.error("Failed to generate summary for firm: %s", firm["name"])
+            if all_transactions:
+                try:
+                    summary = process_transactions(all_transactions, wallets, firm)
+                    if summary:
+                        cache[firm["id"]] = summary
+                        summaries.append(summary)
+                    else:
+                        logger.warning(
+                            "No summary generated for firm: %s", firm["name"]
+                        )
+                except Exception as e:
+                    logger.error(
+                        "Error processing transactions for firm %s: %s",
+                        firm["name"],
+                        str(e),
+                    )
+
+        except Exception as e:
+            logger.error(f"Error processing firm {firm['name']}: {str(e)}")
+            continue  # Skip this firm and continue with the next one
 
     logger.info("Returning summaries for %d firms", len(summaries))
     return summaries
