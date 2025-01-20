@@ -192,6 +192,22 @@ class TimeRangeSummary(BaseModel):
     average_payout_size: float
 
 
+class MonthlyPayouts(BaseModel):
+    month: str  # Format: "YYYY-MM"
+    total_amount: float
+
+    class Config:
+        json_encoders = {datetime: lambda v: v.isoformat()}
+
+
+class YearlyPayouts(BaseModel):
+    total_amount: float
+    monthly_breakdown: List[MonthlyPayouts]
+
+    class Config:
+        json_encoders = {datetime: lambda v: v.isoformat()}
+
+
 class FirmSummary(BaseModel):
     name: str
     id: str
@@ -205,6 +221,7 @@ class FirmSummary(BaseModel):
     top_10_largest_payouts: List[Payout]
     time_since_last_payout: Optional[str]
     percentage_change_from_previous_month: str
+    monthly_payouts: List[MonthlyPayouts]
 
     class Config:
         json_encoders = {datetime: lambda v: v.isoformat()}
@@ -307,8 +324,6 @@ def process_transactions(
         ]
 
         if not outgoing_txs:
-            logger.warning("No outgoing transactions found for firm: %s", firm["name"])
-            # Return a default summary with zero values instead of None
             return FirmSummary(
                 name=firm["name"],
                 id=firm["id"],
@@ -347,26 +362,39 @@ def process_transactions(
                 top_10_largest_payouts=[],
                 time_since_last_payout=None,
                 percentage_change_from_previous_month="0.00%",
+                monthly_payouts=[],
             )
 
         # Sort transactions by timestamp, most recent first
         outgoing_txs.sort(key=lambda x: x.timestamp, reverse=True)
 
-        # Check if a specific transaction is the last payout
-        last_payout = outgoing_txs[0] if outgoing_txs else None
-        specific_transaction = Payout(
-            value=773.67,
-            timestamp=datetime.fromisoformat("2024-12-03T00:00:04"),
-            wallet="",
-        )
-        is_last_payout = (
-            last_payout
-            and last_payout.value == specific_transaction.value
-            and last_payout.timestamp == specific_transaction.timestamp
-        )
+        # Get the earliest transaction date
+        earliest_tx = min(outgoing_txs, key=lambda x: x.timestamp)
+        earliest_date = earliest_tx.timestamp.replace(day=1)
 
-        if is_last_payout:
-            logger.info("The specific transaction is the last payout from any wallet.")
+        # Get current date
+        now = datetime.now()
+        current_date = now.replace(day=1)
+
+        # Initialize monthly totals dictionary
+        monthly_totals = {}
+
+        # Initialize all months from earliest transaction to now
+        temp_date = earliest_date
+        while temp_date <= current_date:
+            month_key = temp_date.strftime("%Y-%m")
+            monthly_totals[month_key] = 0
+            temp_date = (temp_date + timedelta(days=32)).replace(day=1)
+
+        # Sum payouts by month
+        for tx in outgoing_txs:
+            month_key = tx.timestamp.strftime("%Y-%m")
+            monthly_totals[month_key] = monthly_totals.get(month_key, 0) + tx.value
+
+        monthly_payouts = [
+            MonthlyPayouts(month=month, total_amount=amount)
+            for month, amount in sorted(monthly_totals.items(), reverse=True)
+        ]
 
         # Sort transactions by value, largest first, for top 10 largest payouts
         top_10_largest = sorted(outgoing_txs, key=lambda x: x.value, reverse=True)[:10]
@@ -414,7 +442,7 @@ def process_transactions(
         firm_summary = FirmSummary(
             name=firm["name"],
             id=firm["id"],
-            wallet=", ".join(wallets),  # Include all wallet addresses
+            wallet=", ".join(wallets),
             last_24h=summarize_transactions(last_24h),
             last_7d=summarize_transactions(last_7d),
             last_30d=last_30d_summary,
@@ -424,6 +452,7 @@ def process_transactions(
             top_10_largest_payouts=top_10_largest,
             time_since_last_payout=time_since_last_payout,
             percentage_change_from_previous_month=percentage_change_str,
+            monthly_payouts=monthly_payouts,
         )
         return firm_summary
 
@@ -577,6 +606,60 @@ class CustomJSONEncoder(json.JSONEncoder):
 #             logger.error("Error in WebSocket communication: %s", str(e))
 #     except Exception as e:
 #         logger.error("Failed to establish WebSocket connection: %s", str(e))
+
+
+@app.get("/monthly-payouts/{firm_id}", response_model=List[MonthlyPayouts])
+async def get_monthly_payouts(firm_id: str):
+    """Get monthly payout totals for the last 12 months for a specific firm."""
+    # Get data from cache
+    if "firms" not in cache:
+        await update_cache()
+
+    firms_data = cache.get("firms", [])
+
+    # Find the firm by ID
+    firm_data = next((firm for firm in firms_data if firm.id == firm_id), None)
+    if not firm_data:
+        raise HTTPException(status_code=404, detail="Firm not found")
+
+    # Get all payouts for the firm
+    all_payouts = firm_data.last_10_payouts + firm_data.top_10_largest_payouts
+    # Remove duplicates by converting to dict using timestamp as key
+    unique_payouts = {
+        payout.timestamp.strftime("%Y-%m-%d %H:%M:%S"): payout for payout in all_payouts
+    }
+    payouts = list(unique_payouts.values())
+
+    # Get current date and date 12 months ago
+    now = datetime.now()
+    twelve_months_ago = now - timedelta(days=365)
+
+    # Initialize monthly totals dictionary
+    monthly_totals = {}
+
+    # Initialize all months with zero
+    current_date = twelve_months_ago
+    while current_date <= now:
+        month_key = current_date.strftime("%Y-%m")
+        monthly_totals[month_key] = 0
+        current_date += timedelta(
+            days=32
+        )  # Move to next month (32 days ensures we move to next month)
+        current_date = current_date.replace(day=1)  # Reset to first day of month
+
+    # Sum payouts by month
+    for payout in payouts:
+        if payout.timestamp >= twelve_months_ago:
+            month_key = payout.timestamp.strftime("%Y-%m")
+            monthly_totals[month_key] += payout.value
+
+    # Convert to list of MonthlyPayouts objects
+    result = [
+        MonthlyPayouts(month=month, total_amount=amount)
+        for month, amount in sorted(monthly_totals.items())
+    ]
+
+    return result
 
 
 if __name__ == "__main__":
