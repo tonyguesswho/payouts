@@ -44,6 +44,7 @@ FIRMS = [
     {
         "name": "Goat Funded Trader",
         "id": "66ca580dffaeae770f1498d8",
+        "graph_id": "678e6bc22353fe1d2b323c02",
         "wallets": [
             "0xD3E70282420E6349bA3146bc299c4943f9782667",
             "0x0DB777559702d28509DAc1D7A8A473A0F53d96d6",
@@ -53,86 +54,103 @@ FIRMS = [
     {
         "name": "Funding pips",
         "id": "66cb30fa8c725024fcd80ef2",
+        "graph_id": "678e6bb63b3761d2b01fc9c5",
         "wallets": ["0x1e198Ad0608476EfA952De1cD8e574dB68df5f16"],
     },
     {
         "name": "Alpha capital",
         "id": "66cb31048376632dcc6a2a66",
+        "graph_id": "678e6ba7e0ba1ad125137603",
         "wallets": ["0xD172B9C227361FCf6151e802e1F09C084964BDCD"],
     },
     {
         "name": "Funded Peaks",
         "id": "66cb310d796c0ab0a80632a3",
+        "graph_id": "678e6b98b0e2307abe32a867",
         "wallets": ["0xd0D96d8Ad9c5f92b66A3b0d721c70D31da582C38"],
     },
     {
         "name": "MYFUNDEDFX",
         "id": "66cb6fb78376632dcc9fa7a3",
+        "graph_id": "678e6b8dbb168b9cc8276dc8",
         "wallets": ["0x5534A2237f866F3089901A7D17f0E50dD7824c8D"],
     },
     {
         "name": "E8 markets",
         "id": "66cb6fc8d7c63944198a4e21",
+        "graph_id": "678e6b80a22c7ac9286e0b85",
         "wallets": ["0xD19e945EEea57475B791C20112Ebb4B628f5B95c"],
     },
     {
         "name": "The 5ers",
         "id": "66cb6ff62a689130fc027367",
+        "graph_id": "678e6b6ff923f65cd3724dc8",
         "wallets": ["0x349B0Ed1520eAE1472f57eaC77e390A1eCB0C677"],
     },
     {
         "name": "Pip farm",
         "id": "66cb7008ecc3e28071dc267c",
+        "graph_id": "678e6b613b3761d2b01f7b1e",
         "wallets": ["0x442775D9FcbcD269bbdB7677ebd7f7D34dA5569F"],
     },
     {
         "name": "My flash funding",
         "id": "66cb70231238deea1b8e0dd3",
+        "graph_id": "678e6b53b0e2307abe323f23",
         "wallets": ["0xeCa4DcC2D6B0ab4A496A3bDEC3cA07f95022cBdB"],
     },
     {
         "name": "Instant funding",
         "id": "66cb7033c6fa014536c41546",
+        "graph_id": "678e6b476e503584b0461d19",
         "wallets": ["0xA3f21b162fA5a523e12590f2915cA418587Cf626"],
     },
     {
         "name": "Blue guardian",
         "id": "66cb70555230d82035fff546",
+        "graph_id": "678e6b3217b57879096f709f",
         "wallets": ["0x68035843020B6c0CD94DD29c273FFF13c8e9A914"],
     },
     {
         "name": "ascend X",
         "id": "66cb6fa0ffd1354e499a8b2c",
+        "graph_id": "678e6b21252cbe8b43570387",
         "wallets": ["0x858fcd36e5a8aBD64b955b1E2a70F3F75A464AFd"],
     },
     {
         "name": "FXIFY",
         "id": "66cb83bdedabdad8909e66f5",
+        "graph_id": "678e6b09e2f8722ce43cb3ce",
         "wallets": ["0x36109F4D6804f391D830939c0C0e43EFc41a7486"],
     },
     {
         "name": "Funding Traders",
         "id": "66cba1ffecc3e2807105cd15",
+        "graph_id": "678e6aefe71bcf32b9eaaf47",
         "wallets": ["0xe497F35cd0b928b686e9fb2e3cD131949D1841Cf"],
     },
     {
         "name": "Funded Next",
         "id": "66cc776ec15ebbd49e0b8f0c",
+        "graph_id": "678e6adf496dfcedb4f88d97",
         "wallets": ["0x2b9a16e8448091159cc2b2a205b11f2368d53cb6"],
     },
     {
         "name": "Artic Funding",
         "id": "66cf2f4777b50737924ac87e",
+        "graph_id": "678e6ad065d261e7a2de5fa7",
         "wallets": ["0xD4b7E42c1E0C0fDb4285d1dcfCe253C221a30b39"],
     },
     {
         "name": "TopTierTrader",
         "id": "66d26a7e7fa8b1bcae4c4bbc",
+        "graph_id": "678e6ac2ec9e99fb1ee7e75f",
         "wallets": ["0x2265f428a8803bcc6Ccf4A405E627B0c51f33389"],
     },
     {
         "name": "My Crypto Funding",
         "id": "66f530e4e168c74898b83214",
+        "graph_id": "678e6aabbb03f30e3393ba02",
         "wallets": ["0x390A8b588fAf26742f6C5433E29449B35bD35302"],
     },
     # {
@@ -143,31 +161,37 @@ FIRMS = [
     {
         "name": "My Funded Futures",
         "id": "66f5311737c03a78ac3bba3b",
+        "graph_id": "678e6a942948adbb1fd84a80",
         "wallets": ["0x9f28BaC1f793790dd3b0c2f8945F7cA28874f7A6"],
     },
     {
         "name": "Elite Trader Funding",
         "id": "66f531250b9009aedd25e1b1",
+        "graph_id": "678e6a843bc9e80364bc803d",
         "wallets": ["0x8b028Fb68b277BBb5e6F231594771F010F123ddf"],
     },
     {
         "name": "Aqua Funded",
         "id": "66f5312de2de07e06d55f13f",
+        "graph_id": "678e6a779e6a4ec581873306",
         "wallets": ["0x6F405a66cb4048fb05E72D74FCCcD5073697c469"],
     },
     {
         "name": "Monevis",
         "id": "66f700743428c39fd86601a0",
+        "graph_id": "678e6a6a3374462018d2d13c",
         "wallets": ["0x7AF51b735Ef5AB57d6a9ebcA163FdE7A0A291c5b"],
     },
     {
         "name": "Bespoke Funding",
         "id": "66f531423b1d1c6145ff3ab4",
+        "graph_id": "678e6a01f62edc01d0e74528",
         "wallets": ["0xAB87be11b7c9341661786af6026728d6508e2cDe"],
     },
     {
         "name": "Goat Funded Futures",
         "id": "6751b8b3461eb55ecd1ebabd",
+        "graph_id": "678e69ea3374462018d24e0d",
         "wallets": ["0x8732927164bfA58EE8AaB34043bDB41F13e8b1f1"],
     },
 ]
@@ -211,6 +235,7 @@ class YearlyPayouts(BaseModel):
 class FirmSummary(BaseModel):
     name: str
     id: str
+    graph_id: str
     wallet: str
     last_24h: TimeRangeSummary
     last_7d: TimeRangeSummary
@@ -327,6 +352,7 @@ def process_transactions(
             return FirmSummary(
                 name=firm["name"],
                 id=firm["id"],
+                graph_id=firm["graph_id"],
                 wallet=", ".join(wallets),
                 last_24h=TimeRangeSummary(
                     total_payouts=0,
@@ -442,6 +468,7 @@ def process_transactions(
         firm_summary = FirmSummary(
             name=firm["name"],
             id=firm["id"],
+            graph_id=firm["graph_id"],
             wallet=", ".join(wallets),
             last_24h=summarize_transactions(last_24h),
             last_7d=summarize_transactions(last_7d),
