@@ -183,12 +183,6 @@ FIRMS = [
         "wallets": ["0x7AF51b735Ef5AB57d6a9ebcA163FdE7A0A291c5b"],
     },
     {
-        "name": "Bespoke Funding",
-        "id": "66f531423b1d1c6145ff3ab4",
-        "graph_id": "678e6a01f62edc01d0e74528",
-        "wallets": ["0xAB87be11b7c9341661786af6026728d6508e2cDe"],
-    },
-    {
         "name": "Goat Funded Futures",
         "id": "6751b8b3461eb55ecd1ebabd",
         "graph_id": "678e69ea3374462018d24e0d",
