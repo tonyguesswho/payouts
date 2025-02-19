@@ -47,8 +47,7 @@ FIRMS = [
         "graph_id": "678e6bc22353fe1d2b323c02",
         "wallets": [
             "0xD3E70282420E6349bA3146bc299c4943f9782667",
-            "0x0DB777559702d28509DAc1D7A8A473A0F53d96d6",
-            "0xe897C6648A4160f34369173A8403B551Bdc96ffb",
+            "0x0DB777559702d28509DAc1D7A8A473A0F53d96d6"
         ],
     },
     {
